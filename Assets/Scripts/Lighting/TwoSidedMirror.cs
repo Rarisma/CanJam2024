@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TwoSidedMirror : LightReflector
+public class TwoSidedMirror : LightObject
 {
     /// <summary>
     /// A two sided diagonal mirror can only have two rotation states really
@@ -22,7 +22,16 @@ public class TwoSidedMirror : LightReflector
     /// </summary>
     Vector2 reflectAxisTwo = new Vector2(-1, 1);
 
-    public override Vector2[] Reflect(Vector2 incomingDir){
+    private int lrIndex = 0;
+    void Start()
+    {
+        CreateLightRays(2);
+    }
+    public void Update()
+    {
+        lrIndex = 0;
+    }
+    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, LightObject last_hit){
 
         Vector2 currentReflectAxis = reflectAxisOne;
         if (mirrored) currentReflectAxis = reflectAxisTwo;
@@ -35,6 +44,7 @@ public class TwoSidedMirror : LightReflector
             currentReflectAxis = -currentReflectAxis;
         }
 
-        return new Vector2[] {Vector2.Reflect(incomingDir.normalized, currentReflectAxis.normalized)};
+        Emit(lrIndex, hitPos, Vector2.Reflect(incomingDir.normalized, currentReflectAxis.normalized), last_hit);
+        lrIndex++;
     }
 }
