@@ -48,11 +48,11 @@ public class LightObject : PlaceableObject
     public void Emit(int LrIndex, Vector2 startPos, Vector2 direction, LightObject last_hit){
         print("an object is emitting: " + gameObject.name);
         lrs[LrIndex].positionCount = 2;
-        lrs[LrIndex].SetPosition(0, startPos);
+        lrs[LrIndex].SetPosition(0, transform.position);
         RaycastHit2D ray = Physics2D.CircleCast(startPos, 0.1f, direction.normalized, 20f);
 
         if (ray){
-            lrs[LrIndex].SetPosition(1, ray.point);
+            lrs[LrIndex].SetPosition(1, ray.transform.position);
             if (ray.transform.TryGetComponent<LightObject>(out LightObject reflector)){
                 if (!(reflector == this || reflector == last_hit)){
                     reflector.OnHit(ray.point, direction, this);
