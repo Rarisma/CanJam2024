@@ -11,16 +11,16 @@ public class OneSidedMirror : LightReflector
     /// if the incoming direction is 1, 0 (right) and you hit a 1, -1 (down right) there should be no vector since its the back of the mirror
     /// </summary>
     public Vector2 reflectAxis;
-    public override Vector2 Reflect(Vector2 incomingDir){
+    public override Vector2[] Reflect(Vector2 incomingDir){
 
         // If any of the axis are equal, then there should be no reflection
         if (incomingDir.x == reflectAxis.x){
-            return new();
+            return new Vector2[] {};
         }
         if (incomingDir.y == reflectAxis.y){
-            return new();
+            return new Vector2[] {};
         }
 
-        return Vector2.Reflect(incomingDir.normalized, reflectAxis.normalized);
+        return new Vector2[] {Vector2.Reflect(incomingDir.normalized, reflectAxis.normalized)};
     }
 }
