@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class LightReflector : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public virtual Vector2 Reflect(Vector2 incomingDir){
+        return new Vector2(1, 0);
     }
 }
