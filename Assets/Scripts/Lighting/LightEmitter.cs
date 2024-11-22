@@ -33,7 +33,9 @@ public class LightEmitter : MonoBehaviour
             if (ray.transform.TryGetComponent<LightReflector>(out LightReflector reflector)){
                 if (reflector != last_hit) {
                     last_hit = reflector;
-                    Emit(ray.point, reflector.Reflect(emitDir), reflector);
+                    foreach (Vector2 reflection in reflector.Reflect(emitDir)){
+                        Emit(ray.point, reflection, reflector);
+                    }
                 }
             }
             else{
