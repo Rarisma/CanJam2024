@@ -13,7 +13,7 @@ public class LightObject : PlaceableObject
         ResetLightRays();
     }
 
-    public virtual void OnHit(Vector2 startPos, Vector2 emitDir, LightObject last_hit = null){
+    public virtual void OnHit(Vector2 hitPos, Vector2 emitDir, LightObject last_hit = null){
     }
 
     public void CreateLightRays(int count){
@@ -46,6 +46,7 @@ public class LightObject : PlaceableObject
     }
 
     public void Emit(int LrIndex, Vector2 startPos, Vector2 direction, LightObject last_hit){
+        print("an object is emitting: " + gameObject.name);
         lrs[LrIndex].positionCount = 2;
         lrs[LrIndex].SetPosition(0, startPos);
         RaycastHit2D ray = Physics2D.CircleCast(startPos, 0.1f, direction.normalized, 20f);
@@ -56,10 +57,12 @@ public class LightObject : PlaceableObject
                 if (!(reflector == this || reflector == last_hit)){
                     reflector.OnHit(ray.point, direction, this);
                 }
+                reflector.OnHit(ray.point, direction, this);
             }
         }
         else{
             lrs[LrIndex].SetPosition(1, startPos + (direction * 100f));
         }
     }
+    
 }
