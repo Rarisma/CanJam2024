@@ -11,6 +11,7 @@ public class GridManager : MonoBehaviour
 
     private void Start() {
         GenerateGrid();
+        Debug.Log("i like fat hairy balls");
     }
 
     void GenerateGrid(){
