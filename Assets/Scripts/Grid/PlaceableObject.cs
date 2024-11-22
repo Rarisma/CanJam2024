@@ -10,6 +10,8 @@ public class PlaceableObject : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
+    [SerializeField] bool isMovable = true;
+
     public float rotationSpeed = 90f;
 
     void OnMouseDown() {
@@ -20,6 +22,10 @@ public class PlaceableObject : MonoBehaviour
     }
 
     void OnMouseDrag() {
+        if (!isMovable) {
+            return;
+        }
+
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
