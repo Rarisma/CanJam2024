@@ -5,11 +5,15 @@ using UnityEngine;
 public class MirrorSummon : MonoBehaviour
 {
     [SerializeField] private GameObject mirrorPrefab;
+    [SerializeField] private MirrorInventory mirrorInventory;
 
 
     public void MakeMirror()
     {
-        
+
+        if (mirrorInventory.GetObjectAmount("Mirror") <= 0) { return; }
+        mirrorInventory.FindAndDecrement("Mirror");
+
         Vector3 FindEmptyPosition(Vector3 startPosition)
         {
             Vector3 position = startPosition;
@@ -20,7 +24,7 @@ public class MirrorSummon : MonoBehaviour
             return position;
         }
 
-        Vector3 startPosition = new Vector3(8, 4, 0);
+        Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
         var spawnedMirror = Instantiate(mirrorPrefab, emptyPosition, Quaternion.identity);
@@ -29,7 +33,12 @@ public class MirrorSummon : MonoBehaviour
 
     Vector3 GetNextPosition(Vector3 currentPosition)
     {
-        // Define the next position logic, for example, move to the right by 1 unit
+        // Define the next position logic, move to the right by 1 unit
+        // If x is greater than 15, reset x to 0 and increment y by 1
+        if (currentPosition.x > 14)
+        {
+            return new Vector3(0, currentPosition.y + 1, currentPosition.z);
+        }
         return new Vector3(currentPosition.x + 1, currentPosition.y, currentPosition.z);
     }
 
