@@ -13,6 +13,7 @@ public class PlaceableObject : MonoBehaviour
     [SerializeField] bool isMovable = true;
 
     public float rotationSpeed = 90f;
+    public float currentRotation = 0f;
 
     void OnMouseDown() {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
@@ -41,6 +42,7 @@ public class PlaceableObject : MonoBehaviour
         }
 
         if (Input.mouseScrollDelta.y != 0) {
+            currentRotation = (currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y))) % 360;
             transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
         }
     }
