@@ -30,12 +30,15 @@ public class PlaceableObject : MonoBehaviour
         );
 
         Vector3 clampedPos = clampPosition(curPosition);
-        transform.position = clampedPos;
+        if (IsCellEmpty(clampedPos)) {
+            transform.position = clampedPos;
+        }
 
         if (Input.mouseScrollDelta.y != 0) {
             transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
         }
     }
+
 
     Vector3 clampPosition(Vector3 position){
         position.x = Mathf.Clamp(position.x, 0, 15);
@@ -44,4 +47,15 @@ public class PlaceableObject : MonoBehaviour
         return position;
     }
 
+    private bool IsCellEmpty(Vector3 position) {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, GetComponent<BoxCollider2D>().size, 0f);
+        foreach (Collider2D collider in colliders) {
+            if (collider.gameObject != gameObject) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    
 }
