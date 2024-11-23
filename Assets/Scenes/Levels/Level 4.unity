@@ -396,6 +396,22 @@ PrefabInstance:
       propertyPath: mirrorInventory
       value: 
       objectReference: {fileID: 1631617898}
+    - target: {fileID: 660518088923241315, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: objectInventory
+      value: 
+      objectReference: {fileID: 1631617898}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2112373634}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8032743315999578490, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1180,6 +1196,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa2e80794238afa4ba207567d76dd9df, type: 3}
+--- !u!1 &2112373634 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8070456762117843003, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+  m_PrefabInstance: {fileID: 969034784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
