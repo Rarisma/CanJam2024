@@ -36,7 +36,7 @@ public class MainMenuController : MonoBehaviour
             invis.a = 0.0f;
             image.color = invis;
         }
-        FadeBlackOut(1.2f);
+        FadeBlackOut(2.2f);
     }
 
     // Update is called once per frame
