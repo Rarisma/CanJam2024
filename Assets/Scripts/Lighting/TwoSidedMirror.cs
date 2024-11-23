@@ -25,13 +25,13 @@ public class TwoSidedMirror : LightObject
     private int lrIndex = 0;
     void Start()
     {
-        CreateLightRays(2);
+
     }
     public void Update()
     {
         lrIndex = 0;
     }
-    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, LightObject last_hit){
+    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit){
 
         Vector2 currentReflectAxis = reflectAxisOne;
         if (mirrored) currentReflectAxis = reflectAxisTwo;
@@ -44,7 +44,7 @@ public class TwoSidedMirror : LightObject
             currentReflectAxis = -currentReflectAxis;
         }
 
-        Emit(lrIndex, hitPos, Vector2.Reflect(incomingDir.normalized, currentReflectAxis.normalized), last_hit);
+        Emit(hitPos, Vector2.Reflect(incomingDir.normalized, hitNormal), last_hit);
         lrIndex++;
     }
 }
