@@ -90,7 +90,7 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayLevel(int levelID)
     {
-        levelToLoadNextLmaoOhio = levelID + 1;
+        levelToLoadNextLmaoOhio = levelID;
         FadeBlackIn(1.0f);
     }
 
