@@ -8,11 +8,12 @@ public class JAM : MonoBehaviour
     [SerializeField] private RectTransform bottomHead;
     public AudioSource audioSource;
     public float updateStep = 0.1f;
-    public int sampleDataLength = 2048;
+    public int sampleDataLength = 1024;
 
     private float currentUpdateTime = 0f;
     private float clipLoudness;
     private float[] clipSampleData;
+    private JAMSounds sounds;
 
     // Start is called before the first frame update
     void Awake()
@@ -21,9 +22,13 @@ public class JAM : MonoBehaviour
 			Debug.LogError(GetType() + ".Awake: there was no audioSource set.");
 		}
 		clipSampleData = new float[sampleDataLength];
+
+        sounds = GetComponent<JAMSounds>();
     }
     void Start()
     {
+        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.Idle);
+        audioSource.Play();
     }
 
     // Update is called once per frame
@@ -40,6 +45,6 @@ public class JAM : MonoBehaviour
 			clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
 		}
 
-        topHead.localPosition = new Vector3(0, -1 + (clipLoudness * 150), 0);
+        topHead.localPosition = new Vector3(0, -1 + clipLoudness * 300, 0);
     }
 }
