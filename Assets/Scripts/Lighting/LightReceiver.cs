@@ -11,7 +11,6 @@ public class LightReceiver : LightPowered
     // Start is called before the first frame update
     public override void Start()
     {
-
         // Only one light receiver will do the checks each frame for the level being over (all light receivers being powered)                                                                                                               
         // This script will go through each light receiver in the game and if it has a lower instance id, it cannot be the leader
         // This means the light receiver with the smallest instance ID will do the checking each frame
