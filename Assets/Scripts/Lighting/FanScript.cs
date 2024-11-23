@@ -27,16 +27,6 @@ public class FanScript : LightPowered
                 }
             }
         }
-        else{
-            animator.SetBool("Powered", false);
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, fanRange);
-            foreach (var collider in colliders)
-            {
-                if(collider.gameObject.TryGetComponent(out SmokeObject smokeObject)){
-                    smokeObject.Ignite();
-                }
-            }
-        }
 
     }
 
