@@ -14,6 +14,9 @@ public class MirrorSummon : MonoBehaviour
     {        
         print("Mirror created");
 
+        mirrorButton.transform.localScale = new Vector3(1, 1, 1);
+        mirrorButton.transform.DOKill();
+
         if (objectInventory.GetObjectAmount("Mirror") <= 0) { return; }
         objectInventory.FindAndDecrement("Mirror");
 
@@ -42,6 +45,9 @@ public class MirrorSummon : MonoBehaviour
     {        
         print("Splitter created");
 
+        splitterButton.transform.localScale = new Vector3(1, 1, 1);
+        splitterButton.transform.DOKill();
+        
         if (objectInventory.GetObjectAmount("Splitter") <= 0) { return; }
         objectInventory.FindAndDecrement("Splitter");
 
@@ -58,7 +64,7 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
-        splitterButton.transform.DOKill();
+        
         splitterButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
 
         var spawnedSplitter = Instantiate(splitterPrefab, emptyPosition, Quaternion.identity);
