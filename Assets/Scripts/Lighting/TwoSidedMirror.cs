@@ -23,10 +23,7 @@ public class TwoSidedMirror : LightObject
     Vector2 reflectAxisTwo = new Vector2(-1, 1);
 
     private int lrIndex = 0;
-    void Start()
-    {
 
-    }
     public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit){
 
         Vector2 currentReflectAxis = reflectAxisOne;

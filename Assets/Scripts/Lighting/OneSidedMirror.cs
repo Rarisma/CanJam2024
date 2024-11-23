@@ -17,10 +17,6 @@ public class OneSidedMirror : LightObject
     public Vector2 newDir;
 
 
-    void Start()
-    {
-    }
-
     public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit){
         float currentRotation = GetCurrentRotation();
         reflectAxis = Globals.DegToVector(currentRotation + 45);
