@@ -30,6 +30,7 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
+        mirrorButton.transform.DOKill();
         mirrorButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
 
         var spawnedMirror = Instantiate(mirrorPrefab, emptyPosition, Quaternion.identity);
@@ -57,6 +58,7 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
+        splitterButton.transform.DOKill();
         splitterButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
 
         var spawnedSplitter = Instantiate(splitterPrefab, emptyPosition, Quaternion.identity);
