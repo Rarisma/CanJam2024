@@ -3,6 +3,7 @@ using System.Collections;
 using UnityEngine.Rendering;
 using Unity.VisualScripting;
 using System;
+using DG.Tweening;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -46,6 +47,7 @@ public class PlaceableObject : MonoBehaviour
 
         Vector3 clampedPos = clampPosition(curPosition);
         if (IsCellEmpty(clampedPos)) {
+            
             transform.position = clampedPos;
         }
 

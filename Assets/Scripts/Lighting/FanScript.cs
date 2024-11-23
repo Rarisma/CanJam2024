@@ -3,21 +3,46 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FanScript : MonoBehaviour
+public class FanScript : LightPowered
 {
     [SerializeField] private float fanRange = 1.0f;
-    [SerializeField] private bool isPowered = false;
+    private Animator animator;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    public override void Start() {
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-        
+        if (isPowered)
+        {
+            PoweredRotate();
+            animator.SetBool("Powered", true);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, fanRange);
+            foreach (var collider in colliders)
+            {
+                if(collider.gameObject.TryGetComponent(out SmokeObject smokeObject)){
+                    smokeObject.Extinguish();
+                }
+            }
+        }
+        else{
+            animator.SetBool("Powered", false);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, fanRange);
+            foreach (var collider in colliders)
+            {
+                if(collider.gameObject.TryGetComponent(out SmokeObject smokeObject)){
+                    smokeObject.Ignite();
+                }
+            }
+        }
+
+    }
+
+    private void PoweredRotate()
+    {
+        transform.Rotate(0, 0, .25f);
     }
 
     void OnDrawGizmosSelected()

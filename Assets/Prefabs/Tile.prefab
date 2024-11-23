@@ -98,5 +98,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseColor: {r: 0.26446936, g: 0.6901961, b: 0.25490198, a: 1}
-  offsetColor: {r: 0.078431375, g: 0.43529412, b: 0.094914965, a: 1}
+  offsetColor: {r: 0.24281344, g: 0.6320754, b: 0.23553754, a: 1}
   spriteRenderer: {fileID: 7297437922837937196}
