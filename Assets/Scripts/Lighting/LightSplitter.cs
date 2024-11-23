@@ -1,29 +1,49 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
-public class LightSplitter : MonoBehaviour
+public class LightSplitter : LightObject
 {
-    /// <summary>
-    /// Horizontal reflection if false, vertical reflection otherwise
-    /// </summary>
-    public bool isUpright;
-
-    public virtual Vector2[] Reflect(Vector2 incomingDir)
+    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit)
     {
-        if (isUpright) //Split to left and right
+        float rotation = GetCurrentRotation();
+        print(rotation);
+        incomingDir = incomingDir.normalized;
+
+        print("Splitter: " + incomingDir);
+
+        if (rotation > 45 && rotation <= 135)
         {
-            return new Vector2[] {
-               Vector2.left,
-               Vector2.right
-            };
+            if (incomingDir.y < 0.71f && incomingDir.y > -0.71f && incomingDir.x < 0)
+            {
+                Emit(transform.position, Vector2.up, this);
+                Emit(transform.position, Vector2.down, this);
+            }
         }
-        else //Split to up and down
+        if (rotation > 135 && rotation <= 225)
         {
-            return new Vector2[] {
-                Vector2.up,
-                Vector2.down
-            };
+            if (incomingDir.x < 0.71f && incomingDir.x > -0.71f && incomingDir.y < 0)
+            {
+                Emit(transform.position, Vector2.left, this);
+                Emit(transform.position, Vector2.right, this);
+            }
+        }
+        if (rotation > 225 && rotation <= 315)
+        {
+            if (incomingDir.y < 0.71f && incomingDir.y > -0.71f && incomingDir.x > 0)
+            {
+                Emit(transform.position, Vector2.up, this);
+                Emit(transform.position, Vector2.down, this);
+            }
+        }
+        if (rotation > 315 || rotation <= 45)
+        {
+            if (incomingDir.x < 0.71f && incomingDir.x > -0.71f && incomingDir.y > 0)
+            {
+                Emit(transform.position, Vector2.left, this);
+                Emit(transform.position, Vector2.right, this);
+            }
         }
 
     }

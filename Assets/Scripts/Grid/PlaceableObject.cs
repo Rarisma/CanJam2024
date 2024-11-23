@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering;
 using Unity.VisualScripting;
+using System;
+using DG.Tweening;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -45,15 +47,21 @@ public class PlaceableObject : MonoBehaviour
 
         Vector3 clampedPos = clampPosition(curPosition);
         if (IsCellEmpty(clampedPos)) {
+            
             transform.position = clampedPos;
         }
 
         if (Input.mouseScrollDelta.y != 0) {
-            currentRotation = (currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y))) % 360;
+            currentRotation = mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
             transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
         }
     }
 
+    // Normal C# Modulo (%) doesn't wrap when going below zero, i don't want negative numbers
+    float mod(float value, int mod)
+    {
+        return (value % mod + mod) % mod;
+    }
 
     Vector3 clampPosition(Vector3 position){
         position.x = Mathf.Clamp(position.x, 0, gridManager.width - 1);
@@ -63,7 +71,7 @@ public class PlaceableObject : MonoBehaviour
     }
 
     private bool IsCellEmpty(Vector3 position) {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, GetComponent<BoxCollider2D>().size, 0f);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, GetComponent<BoxCollider2D>().size, 0f, 1 << 6);
         foreach (Collider2D collider in colliders) {
             if (collider.gameObject != gameObject) {
                 return false;
@@ -73,5 +81,4 @@ public class PlaceableObject : MonoBehaviour
     }
 
 
-    
 }

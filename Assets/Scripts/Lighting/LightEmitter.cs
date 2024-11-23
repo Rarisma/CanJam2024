@@ -4,19 +4,11 @@ using UnityEngine;
 
 public class LightEmitter : LightObject
 {
-
-    int indexes;
-    // Start is called before the first frame update
-    void Start()
+    public override void Update()
     {
-        CreateLightRays(1);
-    }
-
-    // Update is called once per frame
-    public void Update()
-    {
-        Vector2 emitDirection = Globals.DegToVector(currentRotation);
+        base.Update();
+        Vector2 emitDirection = Globals.DegToVector(GetCurrentRotation());
         print("emitter dir:" + emitDirection);
-        Emit(0, transform.position, emitDirection, null);
+        Emit(transform.position, emitDirection, null);
     }
 }
