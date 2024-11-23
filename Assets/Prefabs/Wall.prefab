@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: -2319178922483595177, guid: 13274a8eeefef194ba7bc9f945203b54, type: 3}
+    - target: {fileID: 7297437922837937196, guid: 938fe0f629736c540bdd9226c4d2dc46, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7425383559291999280, guid: 938fe0f629736c540bdd9226c4d2dc46, type: 3}
       propertyPath: m_Name
       value: Wall
