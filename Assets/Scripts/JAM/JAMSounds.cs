@@ -7,17 +7,17 @@ public class JAMSounds : MonoBehaviour
 {
     // TODO: dont repeat voice lines until all have been played
     [SerializeField] private AudioClip[] levelStartSounds;
-    private List<int> levelStartUsed;
+    private static List<int> levelStartUsed;
     [SerializeField] private AudioClip[] smokePresentSounds;
-    private List<int> smokePresentUsed;
+    private static List<int> smokePresentUsed;
     [SerializeField] private AudioClip[] levelCompleteSounds;
-    private List<int> levelCompleteUsed;
+    private static List<int> levelCompleteUsed;
     [SerializeField] private AudioClip[] idleSounds;
-    private List<int> idleUsed;
+    private static List<int> idleUsed;
     [SerializeField] private AudioClip[] movingObjectSounds;
-    private List<int> movingObjectUsed;
+    private static List<int> movingObjectUsed;
     [SerializeField] private AudioClip[] emptyInventorySounds;
-    private List<int> emptyInventoryUsed;
+    private static List<int> emptyInventoryUsed;
 
     void Start()
     {

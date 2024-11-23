@@ -14,6 +14,7 @@ public class JAM : MonoBehaviour
     private float clipLoudness;
     private float[] clipSampleData;
     private JAMSounds sounds;
+    private Vector3 initPos;
 
     // Start is called before the first frame update
     void Awake()
@@ -27,8 +28,9 @@ public class JAM : MonoBehaviour
     }
     void Start()
     {
-        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.EmptyInventory);
+        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.LevelComplete);
         audioSource.Play();
+        initPos = bottomHead.localPosition;
     }
 
     // Update is called once per frame
@@ -45,6 +47,6 @@ public class JAM : MonoBehaviour
 			clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
 		}
 
-        topHead.localPosition = new Vector3(0, -1 + clipLoudness * 200, 0);
+        bottomHead.localPosition = initPos - new Vector3(0, clipLoudness * 100, 0);
     }
 }
