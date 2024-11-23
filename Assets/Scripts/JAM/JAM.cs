@@ -7,6 +7,7 @@ public class JAM : MonoBehaviour
     [SerializeField] private RectTransform topHead;
     [SerializeField] private RectTransform bottomHead;
     public AudioSource audioSource;
+    public static JAM instance;
     public float updateStep = 0.1f;
     public int sampleDataLength = 1024;
 
@@ -67,10 +68,10 @@ public class JAM : MonoBehaviour
         bottomHead.localPosition = initPos - new Vector3(0, clipLoudness * 100, 0);
     }
 
-    public void PlayVoiceLine(JAMSounds.VoiceLineType type)
+    public static void PlayVoiceLine(JAMSounds.VoiceLineType type)
     {
-        audioSource.clip = sounds.GetVoiceLine(type);
-        audioSource.Play();
-        timeSinceLastVoiceline = 0.0f;
+        instance.audioSource.clip = instance.sounds.GetVoiceLine(type);
+        instance.audioSource.Play();
+        instance.timeSinceLastVoiceline = 0.0f;
     }
 }

@@ -100,7 +100,7 @@ public class LightObject : MonoBehaviour
     }
 
     public void Emit(Vector2 startPos, Vector2 direction, LightObject last_hit, int recursions = 0){
-        if (recursions > 50) return;
+        if (recursions > 25) return;
         direction.x = (float)Math.Round(direction.x, 2);
         direction.y = (float)Math.Round(direction.y, 2);
 
@@ -122,7 +122,7 @@ public class LightObject : MonoBehaviour
             {
                 if (!(reflector == this || reflector == last_hit))
                 {
-                    reflector.OnHit(ray.point, direction, ray.normal, this, recursions);
+                    reflector.OnHit(ray.point, direction, ray.normal, this, recursions+1);
                 }
             }
             return;
