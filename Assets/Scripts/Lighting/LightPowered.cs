@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class LightPowered : LightObject
 {
-    Coroutine currentCoroutine;
-
     public bool isPowered;
-
+    public Coroutine currentCoroutine = null;
     // Start is called before the first frame update
     new void Start()
     {
@@ -36,7 +34,7 @@ public class LightPowered : LightObject
         isPowered = false;
     }
 
-    public override void OnHit(Vector2 hitPos, Vector2 emitDir, Vector2 hitNormal, LightObject last_hit = null)
+    public override void OnHit(Vector2 hitPos, Vector2 emitDir, Vector2 hitNormal, LightObject last_hit = null, int recursions = 0)
     {
         PowerOn();
     }

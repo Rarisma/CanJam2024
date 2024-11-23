@@ -24,7 +24,7 @@ public class TwoSidedMirror : LightObject
 
     private int lrIndex = 0;
 
-    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit){
+    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit, int recursions = 0){
 
         Vector2 currentReflectAxis = reflectAxisOne;
         if (mirrored) currentReflectAxis = reflectAxisTwo;

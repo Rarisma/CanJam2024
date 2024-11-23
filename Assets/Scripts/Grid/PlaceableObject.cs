@@ -24,6 +24,10 @@ public class PlaceableObject : MonoBehaviour
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
     }
 
+    public void Update() {
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
+    }
+
     void OnMouseDown() {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
@@ -53,7 +57,6 @@ public class PlaceableObject : MonoBehaviour
 
         if (Input.mouseScrollDelta.y != 0) {
             currentRotation = mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
-            transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
         }
     }
 
