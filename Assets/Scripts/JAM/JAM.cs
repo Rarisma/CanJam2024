@@ -27,6 +27,8 @@ public class JAM : MonoBehaviour
     }
     void Start()
     {
+        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.Idle);
+        audioSource.Play();
     }
 
     // Update is called once per frame
