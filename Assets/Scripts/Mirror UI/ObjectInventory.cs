@@ -8,8 +8,14 @@ public class MirrorInventory : MonoBehaviour
     public Dictionary<string, int> objectAmount = new();
     [SerializeField] private Text[] objectAmountText;
 
+    [SerializeField] private int[] objectAmounts;
+    [SerializeField] private string[] objectNames;
+
     private void Start(){
-        objectAmount.Add("Mirror", 5);
+        for (int i = 0; i < objectNames.Length; i++)
+        {
+            objectAmount.Add(objectNames[i], objectAmounts[i]);
+        }
     }
 
     void Update(){

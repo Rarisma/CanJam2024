@@ -11,6 +11,9 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private RectTransform mainPanel;
     [SerializeField] private RectTransform optionPanel;
     [SerializeField] private RectTransform playPanel;
+    [SerializeField] private RectTransform backgroundPanel;
+    [SerializeField] private RectTransform skyPanel;
+    [SerializeField] private Image[] hoverImages;
     private RectTransform initialMainPos;
     private RectTransform initialOptionPos;
     private RectTransform initialPlayPos;
@@ -33,7 +36,7 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        skyPanel.position -= new Vector3(15, 0, 0) * Time.deltaTime;
     }
 
     void FadeBlackOut(float durationSeconds)
@@ -63,6 +66,7 @@ public class MainMenuController : MonoBehaviour
     public void GoToOptions()
     {
         mainPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
+        backgroundPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
     }
@@ -70,18 +74,21 @@ public class MainMenuController : MonoBehaviour
     public void BackFromOptions()
     {
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
+        backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
     }
 
     public void GoToPlay()
     {
         mainPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
+        backgroundPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
     }
 
     public void BackFromPlay()
     {
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
+        backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
     }
 
@@ -89,5 +96,15 @@ public class MainMenuController : MonoBehaviour
     {
         levelToLoadNextLmaoOhio = levelID + 1;
         FadeBlackIn(1.0f);
+    }
+
+    public void HoverEnter(int imageIndex)
+    {
+        hoverImages[imageIndex].DOColor(Color.yellow, 0.3f);
+    }
+
+    public void HoverExit(int imageIndex)
+    {
+        hoverImages[imageIndex].DOColor(Color.white, 0.3f);
     }
 }

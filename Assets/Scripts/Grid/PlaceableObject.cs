@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -10,17 +11,29 @@ public class PlaceableObject : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
+    [SerializeField] bool isMovable = true;
+    [SerializeField] GridManager gridManager;
+
     public float rotationSpeed = 90f;
     public float currentRotation = 0f;
+
+    public void Start() {
+        print("Finding GridManager");
+        gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
+    }
 
     void OnMouseDown() {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
-        
+        gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
     }
 
     void OnMouseDrag() {
+        if (!isMovable) {
+            return;
+        }
+
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
         Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
@@ -43,8 +56,8 @@ public class PlaceableObject : MonoBehaviour
 
 
     Vector3 clampPosition(Vector3 position){
-        position.x = Mathf.Clamp(position.x, 0, 15);
-        position.y = Mathf.Clamp(position.y, 0, 8);
+        position.x = Mathf.Clamp(position.x, 0, gridManager.width - 1);
+        position.y = Mathf.Clamp(position.y, 0, gridManager.height - 1);
         
         return position;
     }
