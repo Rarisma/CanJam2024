@@ -63,7 +63,7 @@ public class PlaceableObject : MonoBehaviour
     }
 
     private bool IsCellEmpty(Vector3 position) {
-        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, GetComponent<BoxCollider2D>().size, 0f);
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(position, GetComponent<BoxCollider2D>().size, 0f, 1 << 6);
         foreach (Collider2D collider in colliders) {
             if (collider.gameObject != gameObject) {
                 return false;
@@ -73,5 +73,4 @@ public class PlaceableObject : MonoBehaviour
     }
 
 
-    
 }
