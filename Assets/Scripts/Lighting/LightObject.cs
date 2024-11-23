@@ -82,7 +82,7 @@ public class LightObject : MonoBehaviour
 
             print("an object is hitting: " + gameObject.name + " " + ray.transform.gameObject.name);
             DrawLine(startPos, ray.point);
-            if (ray.distance < 1f) return;
+            if (ray.distance < 0.5f) return;
             if (ray.transform.TryGetComponent<LightObject>(out LightObject reflector))
             {
                 if (!(reflector == this || reflector == last_hit))

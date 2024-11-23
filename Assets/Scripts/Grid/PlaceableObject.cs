@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Rendering;
 using Unity.VisualScripting;
+using System;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -49,11 +50,16 @@ public class PlaceableObject : MonoBehaviour
         }
 
         if (Input.mouseScrollDelta.y != 0) {
-            currentRotation = (currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y))) % 360;
+            currentRotation = mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
             transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
         }
     }
 
+    // Normal C# Modulo (%) doesn't wrap when going below zero, i don't want negative numbers
+    float mod(float value, int mod)
+    {
+        return (value % mod + mod) % mod;
+    }
 
     Vector3 clampPosition(Vector3 position){
         position.x = Mathf.Clamp(position.x, 0, gridManager.width - 1);
