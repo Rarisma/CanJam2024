@@ -10,6 +10,7 @@ public class MirrorSummon : MonoBehaviour
 
     public void MakeMirror()
     {
+        print("Mirror created");
 
         if (mirrorInventory.GetObjectAmount("Mirror") <= 0) { return; }
         mirrorInventory.FindAndDecrement("Mirror");
