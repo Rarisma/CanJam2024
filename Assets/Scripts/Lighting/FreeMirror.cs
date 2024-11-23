@@ -19,6 +19,6 @@ public class FreeMirror : OneSidedMirror
 
         newDir = Vector2.Reflect(incomingDir.normalized, hitNormal);
 
-        Emit(hitPos, newDir, last_hit);
+        Emit(hitPos, newDir, last_hit, recursions);
     }
 }

@@ -36,6 +36,6 @@ public class OneSidedMirror : LightObject
         newDir.x = (float)Math.Round(newDir.x);
         newDir.y = (float)Math.Round(newDir.y);
 
-        Emit(hitPos, newDir, last_hit);
+        Emit(hitPos, newDir, last_hit, recursions);
     }
 }
