@@ -142,7 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lrs: []
-  lineMaterial: {fileID: 0}
+  lineMaterial: {fileID: 2100000, guid: 266de5d7de5ddc74999f6be646c208d4, type: 2}
 --- !u!61 &8147027919584052365
 BoxCollider2D:
   m_ObjectHideFlags: 0

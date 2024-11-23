@@ -24,6 +24,10 @@ public class PlaceableObject : MonoBehaviour
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
     }
 
+    public void Update() {
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
+    }
+
     void OnMouseDown() {
         screenPoint = Camera.main.WorldToScreenPoint(gameObject.transform.position);
 

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9184870854160139393
+--- !u!114 &-5893616639754151
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -20,8 +20,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Light
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_Name: Plant
+  m_Shader: {fileID: -6465566751694194690, guid: c30ee3c7ad27d7543bb65b1483b15e17, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
   m_ValidKeywords: []
@@ -41,9 +41,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 10305, guid: 0000000000000000f000000000000000, type: 0}
-        m_Scale: {x: 2, y: 2}
-        m_Offset: {x: 1, y: 1}
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MaskTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -52,8 +52,12 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_b543c54b8d22463c80a1ff431e3ab35e_Texture_1_Texture2D:
-        m_Texture: {fileID: 10307, guid: 0000000000000000f000000000000000, type: 0}
+    - _SampleTexture2D_2f50d3e7ffdc4b7dacacb4fe70e2716f_Texture_1_Texture2D:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _mainTex:
+        m_Texture: {fileID: -8328923581568760697, guid: 7ec997584eb6953458479cb1b3b23505, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
@@ -70,29 +74,12 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - PixelSnap: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
-    - _ColorMask: 15
-    - _DecalMeshBiasType: 0
-    - _DecalMeshDepthBias: 0
-    - _DecalMeshViewBias: 0
-    - _DrawOrder: 0
     - _EnableExternalAlpha: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    - _WiggleAmount: 0.5
-    - _WiggleSpeed: 5
+    - _shift: 0
     m_Colors:
-    - _Color: {r: 1, g: 0.95752835, b: 0.4669811, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _color: {r: 1, g: 0.85797274, b: 0, a: 0}
-    - _wiggleDir: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

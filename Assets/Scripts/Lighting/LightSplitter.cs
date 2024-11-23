@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class LightSplitter : LightObject
 {
-    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit)
+    public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit, int recursions = 0)
     {
         float rotation = GetCurrentRotation();
         print(rotation);

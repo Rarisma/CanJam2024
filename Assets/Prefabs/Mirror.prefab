@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lrs: []
-  lineMaterial: {fileID: 0}
+  lineMaterial: {fileID: 2100000, guid: 266de5d7de5ddc74999f6be646c208d4, type: 2}
   reflectAxis: {x: 0, y: 0}
   newDir: {x: 0, y: 0}
 --- !u!68 &4383393600282613403
