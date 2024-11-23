@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class GridManager : MonoBehaviour
 {
-    [SerializeField] private int width, height;
+    public int width, height;
     [SerializeField] private Tile tilePrefab;
 
     [SerializeField] private Transform cam;
 
     private void Start() {
         GenerateGrid();
+            Camera.main.orthographicSize = height / 2 + 1;
     }
 
     void GenerateGrid(){

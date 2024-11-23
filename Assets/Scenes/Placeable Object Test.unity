@@ -367,8 +367,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25e41fbe862e7c9498ac6dbdd3152e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  width: 16
-  height: 9
+  width: 32
+  height: 18
   tilePrefab: {fileID: 2786374356476573173, guid: 938fe0f629736c540bdd9226c4d2dc46, type: 3}
   cam: {fileID: 935807798}
 --- !u!4 &1594431754
@@ -417,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAmountText:
   - {fileID: 328191898}
+  objectAmounts: 
+  objectNames: []
 --- !u!4 &2002515860
 Transform:
   m_ObjectHideFlags: 0
