@@ -405,7 +405,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mirrorPrefab: {fileID: 1044641699200202928, guid: aa2e80794238afa4ba207567d76dd9df, type: 3}
-  mirrorInventory: {fileID: 0}
+  freeMirrorPrefab: {fileID: 1044641699200202928, guid: 68faea94a815101479783ce469b14d8d, type: 3}
+  splitterPrefab: {fileID: 6458094705634028368, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+  objectInventory: {fileID: 0}
 --- !u!1 &8846999615488160193
 GameObject:
   m_ObjectHideFlags: 0

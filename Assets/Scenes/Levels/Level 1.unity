@@ -122,6 +122,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &71266783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8070456762117843003, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+  m_PrefabInstance: {fileID: 1354493033}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &325929091
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -496,6 +501,22 @@ PrefabInstance:
       propertyPath: mirrorInventory
       value: 
       objectReference: {fileID: 732008790}
+    - target: {fileID: 660518088923241315, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: objectInventory
+      value: 
+      objectReference: {fileID: 732008790}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 71266783}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8032743315999578490, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
