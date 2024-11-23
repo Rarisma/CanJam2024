@@ -66,6 +66,7 @@ public class LightReceiver : LightPowered
     void EndLevel()
     {
         // TODO: Implement
+        EndScreenController.Show();
     }
 
     void OnButtonClick()
