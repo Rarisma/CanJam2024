@@ -59,11 +59,5 @@ public class PlaceableObject : MonoBehaviour
         return true;
     }
 
-    private void OnMouseUp()
-    {
-        print("up");
-        GameObject.Find("LightManager").GetComponent<LightManager>().UpdateEmitters();
-    }
-
 
 }

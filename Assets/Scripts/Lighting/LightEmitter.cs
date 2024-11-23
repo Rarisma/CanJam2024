@@ -9,17 +9,11 @@ public class LightEmitter : LightObject
     // Start is called before the first frame update
     void Start()
     {
-        UpdateRay();
-    }
 
-    // Update is called once per frame
-    public void Update()
-    {
     }
-
-    public void UpdateRay()
+    public override void Update()
     {
-        ResetLightRays();
+        base.Update();
         Vector2 emitDirection = Globals.DegToVector(GetCurrentRotation());
         print("emitter dir:" + emitDirection);
         Emit(transform.position, emitDirection, null);

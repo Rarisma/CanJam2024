@@ -27,10 +27,6 @@ public class TwoSidedMirror : LightObject
     {
 
     }
-    public void Update()
-    {
-        lrIndex = 0;
-    }
     public override void OnHit(Vector2 hitPos, Vector2 incomingDir, Vector2 hitNormal, LightObject last_hit){
 
         Vector2 currentReflectAxis = reflectAxisOne;
