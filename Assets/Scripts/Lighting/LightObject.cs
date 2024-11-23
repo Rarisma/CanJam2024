@@ -17,7 +17,7 @@ public class LightObject : MonoBehaviour
     {
         if (transform.parent.TryGetComponent<PlaceableObject>(out PlaceableObject po))
         {
-            if (!po.isMovable)
+            if (!po.isMovable && this.GetType() != typeof(LightEmitter))
             {
                 GetComponent<SpriteRenderer>().color = Color.gray;
             }
