@@ -365,7 +365,7 @@ MonoBehaviour:
   width: 16
   height: 9
   tilePrefab: {fileID: 2786374356476573173, guid: 938fe0f629736c540bdd9226c4d2dc46, type: 3}
-  cam: {fileID: 0}
+  cam: {fileID: 2017425360}
 --- !u!4 &342004213
 Transform:
   m_ObjectHideFlags: 0
