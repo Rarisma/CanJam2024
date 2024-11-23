@@ -19,6 +19,9 @@ public class LightReceiver : LightPowered
         lightReceivers.OrderBy(x => x.gameObject.GetInstanceID()).ToList();
         lightReceiverID = lightReceivers.IndexOf(this);
         leaderReceiver = lightReceiverID == 0;
+
+        float hue_step = 360 / lightReceivers.Count;
+        GetComponent<SpriteRenderer>().material.SetFloat("_shift", hue_step * lightReceiverID);
     }
 
     // Update is called once per frame
