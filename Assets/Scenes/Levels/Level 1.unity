@@ -740,6 +740,30 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.drawMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTiling
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.adaptiveTilingThreshold
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4
@@ -783,6 +807,10 @@ PrefabInstance:
     - target: {fileID: 7809220406153715130, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_Name
       value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_DrawMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
