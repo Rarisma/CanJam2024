@@ -71,7 +71,7 @@ public class LightObject : MonoBehaviour
 
         print("an object is emitting: " + gameObject.name + "at direction " + direction.x);
 
-        RaycastHit2D[] rays =  Physics2D.RaycastAll(startPos, direction.normalized, 20f, 1 << 3);
+        RaycastHit2D[] rays =  Physics2D.RaycastAll(startPos, direction.normalized, 20f, (1 << 0) | (1 << 3));
 
         foreach (RaycastHit2D ray in rays)
         {
