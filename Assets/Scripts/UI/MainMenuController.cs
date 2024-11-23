@@ -18,7 +18,6 @@ public class MainMenuController : MonoBehaviour
     private RectTransform initialOptionPos;
     private RectTransform initialPlayPos;
     private Image blackImage;
-    private bool fading;
     private int levelToLoadNextLmaoOhio;
     void Awake()
     {
@@ -41,13 +40,11 @@ public class MainMenuController : MonoBehaviour
 
     void FadeBlackOut(float durationSeconds)
     {
-        fading = true;
         blackImage.DOFade(0.0f, durationSeconds).onComplete = FinishFadeOut;
     }
 
     void FinishFadeOut()
     {
-        fading = false;
         blackPanel.SetActive(false);
     }
 
@@ -59,7 +56,6 @@ public class MainMenuController : MonoBehaviour
     
     void FinishFadeIn()
     {
-        fading = false;
         SceneManager.LoadSceneAsync(levelToLoadNextLmaoOhio);
     }
 
