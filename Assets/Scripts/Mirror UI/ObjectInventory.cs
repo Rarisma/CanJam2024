@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MirrorInventory : MonoBehaviour
+public class ObjectInventory : MonoBehaviour
 {
     public Dictionary<string, int> objectAmount = new();
     [SerializeField] private Text[] objectAmountText;
@@ -19,9 +19,8 @@ public class MirrorInventory : MonoBehaviour
     }
 
     void Update(){
-        foreach (var item in objectAmount)
-        {
-            objectAmountText[0].text = item.Value.ToString();
+        for(int i = 0; i < objectAmountText.Length; i++){
+            objectAmountText[i].text = objectAmount[objectNames[i]].ToString();
         }
     }
 

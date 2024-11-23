@@ -29,12 +29,23 @@ public class PlaceableObject : MonoBehaviour
 
         offset = gameObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z));
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
+
+        transform.DOScale(1.2f, 0.2f);
     }
 
+    void OnMouseUp() {
+        transform.DOScale(1f, 0.2f);
+    }
+
+
+
     void OnMouseDrag() {
+
         if (!isMovable) {
             return;
         }
+
+
 
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);
 
@@ -47,13 +58,13 @@ public class PlaceableObject : MonoBehaviour
 
         Vector3 clampedPos = clampPosition(curPosition);
         if (IsCellEmpty(clampedPos)) {
-            
-            transform.position = clampedPos;
+            transform.DOMove(clampedPos, 0.2f);
         }
+
 
         if (Input.mouseScrollDelta.y != 0) {
             currentRotation = mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
-            transform.Rotate(0, 0, rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y));
+            transform.DORotate(new Vector3(0, 0, currentRotation), 0.2f);
         }
     }
 

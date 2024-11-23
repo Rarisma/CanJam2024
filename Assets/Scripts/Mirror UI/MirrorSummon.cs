@@ -1,19 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class MirrorSummon : MonoBehaviour
 {
     [SerializeField] private GameObject mirrorPrefab;
-    [SerializeField] private MirrorInventory mirrorInventory;
+    [SerializeField] private GameObject splitterPrefab;
+    [SerializeField] private ObjectInventory objectInventory;
 
 
-    public void MakeMirror()
-    {
+    public void MakeMirror(GameObject mirrorButton)
+    {        
         print("Mirror created");
 
-        if (mirrorInventory.GetObjectAmount("Mirror") <= 0) { return; }
-        mirrorInventory.FindAndDecrement("Mirror");
+        if (objectInventory.GetObjectAmount("Mirror") <= 0) { return; }
+        objectInventory.FindAndDecrement("Mirror");
 
         Vector3 FindEmptyPosition(Vector3 startPosition)
         {
@@ -28,8 +30,38 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
+        mirrorButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
+
         var spawnedMirror = Instantiate(mirrorPrefab, emptyPosition, Quaternion.identity);
         spawnedMirror.name = "Mirror";
+        spawnedMirror.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
+    }
+
+    public void MakeSplitter(GameObject splitterButton)
+    {        
+        print("Splitter created");
+
+        if (objectInventory.GetObjectAmount("Splitter") <= 0) { return; }
+        objectInventory.FindAndDecrement("Splitter");
+
+        Vector3 FindEmptyPosition(Vector3 startPosition)
+        {
+            Vector3 position = startPosition;
+            while (IsPositionOccupied(position))
+            {
+                position = GetNextPosition(position);
+            }
+            return position;
+        }
+
+        Vector3 startPosition = new Vector3(0, 0, 0);
+        Vector3 emptyPosition = FindEmptyPosition(startPosition);
+
+        splitterButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
+
+        var spawnedSplitter = Instantiate(splitterPrefab, emptyPosition, Quaternion.identity);
+        spawnedSplitter.name = "Splitter";
+        spawnedSplitter.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
     }
 
     Vector3 GetNextPosition(Vector3 currentPosition)
