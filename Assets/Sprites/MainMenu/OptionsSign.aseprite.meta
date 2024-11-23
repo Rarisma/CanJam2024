@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d6f806ab00d028f4d8afa4c897ebca1c
+guid: d79036ff4c4194e4d9f0a028bec4c114
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -121,18 +121,18 @@ ScriptedImporter:
     tessellationDetail: 0
     uvTransform: {x: 0, y: 0}
   animatedSpriteImportData:
-  - name: BackSign-Sheet
+  - name: OptionsSign
     originalName: 
-    pivot: {x: 0.5, y: -0.16363636}
+    pivot: {x: 0.5638298, y: 0}
     alignment: 9
     border: {x: 0, y: 0, z: 0, w: 0}
     rect:
       serializedVersion: 2
       x: 4
       y: 4
-      width: 20
-      height: 55
-    spriteID: dc6731573c5744649b387408ce3a2091
+      width: 94
+      height: 59
+    spriteID: 9f7310204ba14ae499f02b477f04931e
     spriteBone: []
     spriteOutline: []
     vertices: []
@@ -140,29 +140,29 @@ ScriptedImporter:
     indices: 
     edges: []
     tessellationDetail: 0
-    uvTransform: {x: -4, y: -5}
+    uvTransform: {x: 4, y: 4}
   spriteSheetImportData: []
   asepriteLayers:
   - layerIndex: 0
-    guid: 1823052730
-    name: BackSign-Sheet
+    guid: -1855284953
+    name: OptionsSign
     layerFlags: 0
     layerType: 0
     blendMode: 0
     cells:
-    - name: BackSign-Sheet
+    - name: OptionsSign
       frameIndex: 0
       additiveSortOrder: 0
       cellRect:
-        x: 0
+        x: 11
         y: 0
-        width: 36
-        height: 64
-      spriteId: dc6731573c5744649b387408ce3a2091
+        width: 94
+        height: 59
+      spriteId: 9f7310204ba14ae499f02b477f04931e
     linkedCells: []
     parentIndex: -1
   platformSettings: []
   generatePhysicsShape: 0
   secondarySpriteTextures: []
   spritePackingTag: 
-  canvasSize: {x: 36, y: 64}
+  canvasSize: {x: 128, y: 64}
