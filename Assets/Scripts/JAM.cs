@@ -8,7 +8,7 @@ public class JAM : MonoBehaviour
     [SerializeField] private RectTransform bottomHead;
     public AudioSource audioSource;
     public float updateStep = 0.1f;
-    public int sampleDataLength = 1024;
+    public int sampleDataLength = 2048;
 
     private float currentUpdateTime = 0f;
     private float clipLoudness;
@@ -24,7 +24,6 @@ public class JAM : MonoBehaviour
     }
     void Start()
     {
-        Debug.Log(topHead.localPosition); 
     }
 
     // Update is called once per frame
