@@ -6,6 +6,7 @@ using DG.Tweening;
 public class MirrorSummon : MonoBehaviour
 {
     [SerializeField] private GameObject mirrorPrefab;
+    [SerializeField] private GameObject freeMirrorPrefab;
     [SerializeField] private GameObject splitterPrefab;
     [SerializeField] private ObjectInventory objectInventory;
 
@@ -13,6 +14,9 @@ public class MirrorSummon : MonoBehaviour
     public void MakeMirror(GameObject mirrorButton)
     {        
         print("Mirror created");
+
+        mirrorButton.transform.localScale = new Vector3(1, 1, 1);
+        mirrorButton.transform.DOKill();
 
         if (objectInventory.GetObjectAmount("Mirror") <= 0) { return; }
         objectInventory.FindAndDecrement("Mirror");
@@ -30,6 +34,7 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
+        mirrorButton.transform.DOKill();
         mirrorButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
 
         var spawnedMirror = Instantiate(mirrorPrefab, emptyPosition, Quaternion.identity);
@@ -41,6 +46,9 @@ public class MirrorSummon : MonoBehaviour
     {        
         print("Splitter created");
 
+        splitterButton.transform.localScale = new Vector3(1, 1, 1);
+        splitterButton.transform.DOKill();
+        
         if (objectInventory.GetObjectAmount("Splitter") <= 0) { return; }
         objectInventory.FindAndDecrement("Splitter");
 
@@ -57,10 +65,37 @@ public class MirrorSummon : MonoBehaviour
         Vector3 startPosition = new Vector3(0, 0, 0);
         Vector3 emptyPosition = FindEmptyPosition(startPosition);
 
+        
         splitterButton.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
 
         var spawnedSplitter = Instantiate(splitterPrefab, emptyPosition, Quaternion.identity);
         spawnedSplitter.name = "Splitter";
+        spawnedSplitter.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
+    }
+    public void MakeFreeMirror(GameObject freeMirrorObject)
+    {        
+        print("FreeMirror created");
+
+        if (objectInventory.GetObjectAmount("FreeMirror") <= 0) { return; }
+        objectInventory.FindAndDecrement("FreeMirror");
+
+        Vector3 FindEmptyPosition(Vector3 startPosition)
+        {
+            Vector3 position = startPosition;
+            while (IsPositionOccupied(position))
+            {
+                position = GetNextPosition(position);
+            }
+            return position;
+        }
+
+        Vector3 startPosition = new Vector3(0, 0, 0);
+        Vector3 emptyPosition = FindEmptyPosition(startPosition);
+
+        freeMirrorObject.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
+
+        var spawnedSplitter = Instantiate(freeMirrorPrefab, emptyPosition, Quaternion.identity);
+        spawnedSplitter.name = "FreeMirror";
         spawnedSplitter.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
     }
 

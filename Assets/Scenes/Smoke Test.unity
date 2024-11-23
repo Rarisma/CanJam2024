@@ -448,7 +448,7 @@ MonoBehaviour:
   objectAmountText:
   - {fileID: 327758771}
   - {fileID: 1482766964}
-  objectAmounts: 0300000003000000
+  objectAmounts: 0300000009000000
   objectNames:
   - Mirror
   - Splitter
@@ -984,6 +984,10 @@ PrefabInstance:
     - target: {fileID: 6182540149415508808, guid: 8908c174c68795e418efe12647ffd415, type: 3}
       propertyPath: m_Name
       value: Inventory UI Splitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6182540149415508808, guid: 8908c174c68795e418efe12647ffd415, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
