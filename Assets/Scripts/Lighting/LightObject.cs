@@ -15,7 +15,13 @@ public class LightObject : MonoBehaviour
 
     public virtual void Start()
     {
-
+        if (transform.parent.TryGetComponent<PlaceableObject>(out PlaceableObject po))
+        {
+            if (!po.isMovable)
+            {
+                GetComponent<SpriteRenderer>().color = Color.gray;
+            }
+        }
     }
 
     // Update is called once per frame

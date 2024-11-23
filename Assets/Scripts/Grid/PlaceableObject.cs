@@ -13,7 +13,7 @@ public class PlaceableObject : MonoBehaviour
     private Vector3 screenPoint;
     private Vector3 offset;
 
-    [SerializeField] bool isMovable = true;
+    public bool isMovable = true;
     [SerializeField] GridManager gridManager;
 
     public float rotationSpeed = 90f;

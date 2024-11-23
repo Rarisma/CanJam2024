@@ -18,7 +18,7 @@ public class LightPowered : LightObject
         base.Update();
     }
 
-    public void PowerOn()
+    public virtual void PowerOn()
     {
         if (currentCoroutine != null)
         {
@@ -32,6 +32,12 @@ public class LightPowered : LightObject
     {
         yield return new WaitForSeconds(0.1f);
         isPowered = false;
+        OnPowerDown();
+    }
+
+    public virtual void OnPowerDown()
+    {
+
     }
 
     public override void OnHit(Vector2 hitPos, Vector2 emitDir, Vector2 hitNormal, LightObject last_hit = null, int recursions = 0)

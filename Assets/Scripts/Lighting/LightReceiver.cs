@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -37,6 +38,14 @@ public class LightReceiver : LightPowered
                 EndLevel();
             }
         }
+
+        GetComponent<Animator>().SetBool("isPowered", isPowered);
+    }
+
+    public override void OnPowerDown()
+    {
+        base.OnPowerDown();
+        GetComponentInChildren<ParticleSystem>().Play();
     }
 
     bool CheckForEndOfLevel()
