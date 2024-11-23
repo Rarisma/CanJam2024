@@ -1,68 +1,108 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Experimental.GlobalIllumination;
 
-[RequireComponent(typeof(Collider2D))]
-public class LightObject : PlaceableObject
+public class LightObject : MonoBehaviour 
 {
-    public LineRenderer[] lrs = new LineRenderer[] {};
+    public List<LineRenderer> lrs = new List<LineRenderer>();
+    public Material lineMaterial;
+
+    public virtual void Start()
+    {
+        lineMaterial = new(Shader.Find("Universal Render Pipeline/2D/Sprite-Unlit-Default"));
+
+    }
 
     // Update is called once per frame
-    public virtual void FixedUpdate()
+    public virtual void Update()
+    {
+    }
+
+    public virtual void OnHit(Vector2 hitPos, Vector2 emitDir, Vector2 hitNormal, LightObject last_hit = null)
     {
         ResetLightRays();
     }
 
-    public virtual void OnHit(Vector2 hitPos, Vector2 emitDir, LightObject last_hit = null){
+    public void DrawLine(Vector2 startPoint, Vector2 endPoint)
+    {
+        // Create the quad mesh for the line
+        Mesh lineMesh = new Mesh();
+
+        Vector3 direction = (endPoint - startPoint).normalized;
+        Vector3 perpendicular = new Vector3(-direction.y, direction.x) * 0.1f;
+
+        Vector3[] vertices = new Vector3[4]
+        {
+            startPoint - (Vector2)perpendicular,
+            startPoint + (Vector2)perpendicular,
+            endPoint - (Vector2)perpendicular,
+            endPoint + (Vector2)perpendicular
+        };
+
+        int[] triangles = new int[6] { 0, 1, 2, 2, 1, 3 };
+
+        lineMesh.vertices = vertices;
+        lineMesh.triangles = triangles;
+
+        // Set color for the material
+        lineMaterial.SetColor("_Color", Color.yellow);
+
+        // Draw the mesh
+        Graphics.DrawMesh(lineMesh, Matrix4x4.identity, lineMaterial, 0);
+
+        Destroy(lineMesh, 0.1f );
     }
 
-    public void CreateLightRays(int count){
-        print("check");
-        LineRenderer[] newlrs = new LineRenderer[count];
-        for (int x = 0; x < count; x++){
-            GameObject go = new GameObject("ray");
-            go.transform.parent = transform;
-            go.transform.localPosition = Vector2.zero;
-
-            LineRenderer lr = go.AddComponent<LineRenderer>();
-            
-            lr.startWidth = 0.2f;
-            lr.endWidth = 0.2f;
-            lr.positionCount = 2;
-            lr.startColor = Color.yellow;
-            lr.endColor = Color.yellow;
-            lr.material = new Material(Shader.Find("Universal Render Pipeline/2D/Sprite-Lit-Default"));
-
-            newlrs[x] = lr;
-        }
-
-        lrs = newlrs;
-    }
 
     public void ResetLightRays(){
         foreach (LineRenderer lr in lrs){
-            lr.positionCount = 0;
+            Destroy(lr.gameObject);
         }
+        lrs.Clear();
     }
 
-    public void Emit(int LrIndex, Vector2 startPos, Vector2 direction, LightObject last_hit){
-        print("an object is emitting: " + gameObject.name);
-        lrs[LrIndex].positionCount = 2;
-        lrs[LrIndex].SetPosition(0, transform.position);
-        RaycastHit2D ray = Physics2D.CircleCast(startPos, 0.1f, direction.normalized, 20f);
+    public void Emit(Vector2 startPos, Vector2 direction, LightObject last_hit){
+        direction.x = (float)Math.Round(direction.x, 2);
+        direction.y = (float)Math.Round(direction.y, 2);
 
-        if (ray){
-            lrs[LrIndex].SetPosition(1, ray.transform.position);
-            if (ray.transform.TryGetComponent<LightObject>(out LightObject reflector)){
-                if (!(reflector == this || reflector == last_hit)){
-                    reflector.OnHit(ray.point, direction, this);
-                }
-                reflector.OnHit(ray.point, direction, this);
+        print("an object is emitting: " + gameObject.name + "at direction " + direction.x);
+
+        RaycastHit2D[] rays =  Physics2D.RaycastAll(startPos, direction.normalized, 20f, 1 << 3);
+
+        foreach (RaycastHit2D ray in rays)
+        {
+            if (ray.transform.gameObject == gameObject)
+            {
+                continue;
             }
+
+            print("an object is hitting: " + gameObject.name + " " + ray.transform.gameObject.name);
+            DrawLine(startPos, ray.point);
+            if (ray.distance < 1f) return;
+            if (ray.transform.TryGetComponent<LightObject>(out LightObject reflector))
+            {
+                if (!(reflector == this || reflector == last_hit))
+                {
+                    reflector.OnHit(ray.point, direction, ray.normal, this);
+                }
+                reflector.OnHit(ray.point, direction, ray.normal, this);
+            }
+            return;
+            
         }
-        else{
-            lrs[LrIndex].SetPosition(1, startPos + (direction * 100f));
-        }
+
+       
+        DrawLine(startPos, startPos + (direction * 100f));
+        
+    }
+
+    public float GetCurrentRotation()
+    {
+        return transform.parent.GetComponent<PlaceableObject>()?.currentRotation ?? 0.0f;
     }
     
 }
