@@ -13,7 +13,8 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private RectTransform playPanel;
     [SerializeField] private RectTransform backgroundPanel;
     [SerializeField] private RectTransform skyPanel;
-    [SerializeField] private Image[] hoverImages;
+    [SerializeField] private Image[] mainHoverImages;
+    [SerializeField] private Image[] levelHoverImages;
     private RectTransform initialMainPos;
     private RectTransform initialOptionPos;
     private RectTransform initialPlayPos;
@@ -94,13 +95,22 @@ public class MainMenuController : MonoBehaviour
         FadeBlackIn(1.0f);
     }
 
-    public void HoverEnter(int imageIndex)
+    public void MainHoverEnter(int imageIndex)
     {
-        hoverImages[imageIndex].DOColor(Color.yellow, 0.3f);
+        mainHoverImages[imageIndex].DOColor(Color.yellow, 0.3f);
     }
 
-    public void HoverExit(int imageIndex)
+    public void MainHoverExit(int imageIndex)
     {
-        hoverImages[imageIndex].DOColor(Color.white, 0.3f);
+        mainHoverImages[imageIndex].DOColor(Color.white, 0.3f);
+    }
+    public void LevelHoverEnter(int levelID)
+    {
+        levelHoverImages[levelID].DOColor(Color.yellow, 0.3f);
+    }
+
+    public void LevelHoverExit(int levelID)
+    {
+        levelHoverImages[levelID].DOColor(Color.white, 0.3f);
     }
 }
