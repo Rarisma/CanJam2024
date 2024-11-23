@@ -9,6 +9,8 @@ public class LightReceiver : LightPowered
     List<LightReceiver> lightReceivers = null;
     int lightReceiverID = 0;
 
+    Coroutine coroutine = null;
+
     // Start is called before the first frame update
     public override void Start()
     {
@@ -34,8 +36,19 @@ public class LightReceiver : LightPowered
         {
             if (CheckForEndOfLevel())
             {
-                print("End Level");
-                EndLevel();
+                if (coroutine == null)
+                {
+                    print("End Level");
+                    coroutine = StartCoroutine(EndLevel());
+                }
+            }
+            else
+            {
+                if (coroutine != null)
+                {
+                    StopCoroutine(coroutine);
+                }
+                coroutine = null;
             }
         }
 
@@ -63,8 +76,9 @@ public class LightReceiver : LightPowered
         return finishLevel;
     }
 
-    void EndLevel()
+    IEnumerator EndLevel()
     {
+        yield return new WaitForSeconds(1.25f);
         // TODO: Implement
         EndScreenController.Show();
     }
