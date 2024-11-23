@@ -17,7 +17,7 @@ public class GridManager : MonoBehaviour
     void GenerateGrid(){
         for(int x = 0; x < width; x++){
             for(int y = 0; y < height; y++){
-                var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y, 0), Quaternion.identity);
+                var spawnedTile = Instantiate(tilePrefab, new Vector3(x, y, 1), Quaternion.identity);
                 spawnedTile.name = $"Tile ({x}, {y})";
                 spawnedTile.transform.parent = transform;
 
