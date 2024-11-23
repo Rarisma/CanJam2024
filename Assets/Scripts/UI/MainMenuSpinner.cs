@@ -10,7 +10,7 @@ public class MainMenuSpinner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rotat = new Vector3(Random.Range(1, 5), Random.Range(1, 5), Random.Range(1, 5));
+        rotat = new Vector3(0, 3, 0);
         currentRotat = transform.eulerAngles;
     }
 
