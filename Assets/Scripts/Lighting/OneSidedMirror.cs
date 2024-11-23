@@ -25,7 +25,17 @@ public class OneSidedMirror : LightObject
         // If any of the axis are equal, then there should be no reflection
 
         newDir = Vector2.Reflect(incomingDir.normalized, hitNormal);
-        
-        Emit(hitPos, newDir, last_hit);
+        if (Math.Abs(newDir.x) > Mathf.Abs(newDir.y))
+        {
+            newDir = Vector2.right * (float)Math.Sin(newDir.x);
+        }
+        else
+        {
+            newDir = Vector2.up * (float)Math.Sin(newDir.y);
+        }
+        newDir.x = (float)Math.Round(newDir.x);
+        newDir.y = (float)Math.Round(newDir.y);
+
+        Emit(hitPos, newDir, last_hit, recursions);
     }
 }
