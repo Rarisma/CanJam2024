@@ -27,7 +27,7 @@ public class JAM : MonoBehaviour
     }
     void Start()
     {
-        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.Idle);
+        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.EmptyInventory);
         audioSource.Play();
     }
 
@@ -45,6 +45,6 @@ public class JAM : MonoBehaviour
 			clipLoudness /= sampleDataLength; //clipLoudness is what you are looking for
 		}
 
-        topHead.localPosition = new Vector3(0, -1 + clipLoudness * 300, 0);
+        topHead.localPosition = new Vector3(0, -1 + clipLoudness * 200, 0);
     }
 }

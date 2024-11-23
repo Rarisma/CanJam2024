@@ -1225,6 +1225,22 @@ PrefabInstance:
       propertyPath: mirrorInventory
       value: 
       objectReference: {fileID: 342004211}
+    - target: {fileID: 660518088923241315, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: objectInventory
+      value: 
+      objectReference: {fileID: 342004211}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgument
+      value: 
+      objectReference: {fileID: 2099457560}
+    - target: {fileID: 1294993279527329121, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8032743315999578490, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -1543,6 +1559,11 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &2099457560 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8070456762117843003, guid: 765cbc87f3ada044e8f88199b6d13e9a, type: 3}
+  m_PrefabInstance: {fileID: 1874493673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2133677325
 PrefabInstance:
   m_ObjectHideFlags: 0
