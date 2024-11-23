@@ -21,6 +21,7 @@ public class JAMSounds : MonoBehaviour
 
     void Start()
     {
+        if (levelStartUsed != null) return;
         levelStartUsed = Enumerable.Range(0, levelStartSounds.Length).ToList();
         smokePresentUsed = Enumerable.Range(0, smokePresentSounds.Length).ToList();
         levelCompleteUsed = Enumerable.Range(0, levelCompleteSounds.Length).ToList();
@@ -48,35 +49,50 @@ public class JAMSounds : MonoBehaviour
     public AudioClip GetVoiceLine(VoiceLineType type)
     {
         AudioClip clip;
+        int randomIndex;
         switch(type)
         {
             case VoiceLineType.LevelStart:
                 if (levelStartUsed.Count == 0) levelStartUsed = Enumerable.Range(0, levelStartSounds.Length).ToList();
-                clip = levelStartSounds[levelStartUsed[Random.Range(0, levelStartUsed.Count)]];
+                randomIndex = Random.Range(0, levelStartUsed.Count);
+                clip = levelStartSounds[levelStartUsed[randomIndex]];
+                levelStartUsed.RemoveAt(randomIndex);
                 break;
             case VoiceLineType.SmokePresent:
                 if (smokePresentUsed.Count == 0) smokePresentUsed = Enumerable.Range(0, smokePresentSounds.Length).ToList();
-                clip = smokePresentSounds[smokePresentUsed[Random.Range(0, smokePresentUsed.Count)]];
+                randomIndex = Random.Range(0, smokePresentUsed.Count);
+                clip = smokePresentSounds[smokePresentUsed[randomIndex]];
+                smokePresentUsed.RemoveAt(randomIndex);
                 break;
             case VoiceLineType.LevelComplete:
                 if (levelCompleteUsed.Count == 0) levelCompleteUsed = Enumerable.Range(0, levelCompleteSounds.Length).ToList();
-                clip = levelCompleteSounds[levelCompleteUsed[Random.Range(0, levelCompleteUsed.Count)]];
+                randomIndex = Random.Range(0, levelCompleteUsed.Count);
+                clip = levelCompleteSounds[levelCompleteUsed[randomIndex]];
+                levelCompleteUsed.RemoveAt(randomIndex);
                 break;
             case VoiceLineType.Idle:
                 if (idleUsed.Count == 0) idleUsed = Enumerable.Range(0, idleSounds.Length).ToList();
-                clip = idleSounds[idleUsed[Random.Range(0, idleUsed.Count)]];
+                randomIndex = Random.Range(0, idleUsed.Count);
+                clip = idleSounds[idleUsed[randomIndex]];
+                idleUsed.RemoveAt(randomIndex);
                 break;
             case VoiceLineType.MovingObjects:
                 if (movingObjectUsed.Count == 0) movingObjectUsed = Enumerable.Range(0, movingObjectSounds.Length).ToList();
-                clip = movingObjectSounds[movingObjectUsed[Random.Range(0, movingObjectUsed.Count)]];
+                randomIndex = Random.Range(0, movingObjectUsed.Count);
+                clip = movingObjectSounds[movingObjectUsed[randomIndex]];
+                movingObjectUsed.RemoveAt(randomIndex);
                 break;
             case VoiceLineType.EmptyInventory:
                 if (emptyInventoryUsed.Count == 0) emptyInventoryUsed = Enumerable.Range(0, emptyInventorySounds.Length).ToList();
-                clip = emptyInventorySounds[emptyInventoryUsed[Random.Range(0, emptyInventoryUsed.Count)]];
+                randomIndex = Random.Range(0, emptyInventoryUsed.Count);
+                clip = emptyInventorySounds[emptyInventoryUsed[randomIndex]];
+                emptyInventoryUsed.RemoveAt(randomIndex);
                 break;
             default:
                 if (idleUsed.Count == 0) idleUsed = Enumerable.Range(0, idleSounds.Length).ToList();
-                clip = idleSounds[idleUsed[Random.Range(0, idleUsed.Count)]];
+                randomIndex = Random.Range(0, idleUsed.Count);
+                clip = idleSounds[idleUsed[randomIndex]];
+                idleUsed.RemoveAt(randomIndex);
                 break;
         }
 

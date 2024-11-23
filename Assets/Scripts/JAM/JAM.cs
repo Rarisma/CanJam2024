@@ -16,6 +16,9 @@ public class JAM : MonoBehaviour
     private JAMSounds sounds;
     private Vector3 initPos;
 
+    private float timeSinceLastVoiceline = 0.0f;
+    private float idleVoicelineCountdown;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -28,14 +31,28 @@ public class JAM : MonoBehaviour
     }
     void Start()
     {
-        audioSource.clip = sounds.GetVoiceLine(JAMSounds.VoiceLineType.LevelComplete);
-        audioSource.Play();
         initPos = bottomHead.localPosition;
+        idleVoicelineCountdown = Random.Range(2, 20);
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        timeSinceLastVoiceline += Time.deltaTime;
+        if (idleVoicelineCountdown != 0.0f && timeSinceLastVoiceline > 10.0f)
+        {
+            idleVoicelineCountdown -= Time.deltaTime;
+            if (idleVoicelineCountdown < 0.0f) 
+            {
+                idleVoicelineCountdown = 0.0f;
+                PlayVoiceLine(JAMSounds.VoiceLineType.Idle);
+                idleVoicelineCountdown = Random.Range(2, 20);
+            }
+        }
+        
+        if (audioSource.clip == null) return;
+
         currentUpdateTime += Time.deltaTime;
 		if (currentUpdateTime >= updateStep) {
 			currentUpdateTime = 0f;
@@ -48,5 +65,12 @@ public class JAM : MonoBehaviour
 		}
 
         bottomHead.localPosition = initPos - new Vector3(0, clipLoudness * 100, 0);
+    }
+
+    public void PlayVoiceLine(JAMSounds.VoiceLineType type)
+    {
+        audioSource.clip = sounds.GetVoiceLine(type);
+        audioSource.Play();
+        timeSinceLastVoiceline = 0.0f;
     }
 }

@@ -30,7 +30,13 @@ public class MainMenuController : MonoBehaviour
     }
     void Start()
     {
-        FadeBlackOut(1.0f);
+        foreach(var image in mainHoverImages)
+        {
+            Color invis = image.color;
+            invis.a = 0.0f;
+            image.color = invis;
+        }
+        FadeBlackOut(1.2f);
     }
 
     // Update is called once per frame
@@ -47,6 +53,10 @@ public class MainMenuController : MonoBehaviour
     void FinishFadeOut()
     {
         blackPanel.SetActive(false);
+        foreach(var image in mainHoverImages)
+        {
+            image.DOFade(1.0f, 1.0f);
+        }
     }
 
     void FadeBlackIn(float durationSeconds)

@@ -378,6 +378,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 1a95972b9f051f645b8207704a330c92, type: 3}
   - {fileID: 8300000, guid: 838233344d692434283b4dabd7c53041, type: 3}
   - {fileID: 8300000, guid: 177cb4335241a0a4aad911f762a754c7, type: 3}
+  - {fileID: 8300000, guid: 909b830b401427046b2d2e290ec5a3f8, type: 3}
+  - {fileID: 8300000, guid: a153b6b9ae7c62746a08824776c307de, type: 3}
   movingObjectSounds:
   - {fileID: 8300000, guid: 7a27825a8c6dfab4fa7df0bba82b01e3, type: 3}
   - {fileID: 8300000, guid: 6cc725e654ecd8b49922aab19f1ae1c8, type: 3}
