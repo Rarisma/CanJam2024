@@ -6,6 +6,7 @@ using DG.Tweening;
 public class MirrorSummon : MonoBehaviour
 {
     [SerializeField] private GameObject mirrorPrefab;
+    [SerializeField] private GameObject freeMirrorPrefab;
     [SerializeField] private GameObject splitterPrefab;
     [SerializeField] private ObjectInventory objectInventory;
 
@@ -69,6 +70,32 @@ public class MirrorSummon : MonoBehaviour
 
         var spawnedSplitter = Instantiate(splitterPrefab, emptyPosition, Quaternion.identity);
         spawnedSplitter.name = "Splitter";
+        spawnedSplitter.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
+    }
+    public void MakeFreeMirror(GameObject freeMirrorObject)
+    {        
+        print("FreeMirror created");
+
+        if (objectInventory.GetObjectAmount("FreeMirror") <= 0) { return; }
+        objectInventory.FindAndDecrement("FreeMirror");
+
+        Vector3 FindEmptyPosition(Vector3 startPosition)
+        {
+            Vector3 position = startPosition;
+            while (IsPositionOccupied(position))
+            {
+                position = GetNextPosition(position);
+            }
+            return position;
+        }
+
+        Vector3 startPosition = new Vector3(0, 0, 0);
+        Vector3 emptyPosition = FindEmptyPosition(startPosition);
+
+        freeMirrorObject.transform.DOPunchScale(new Vector3(0.1f, 0.1f, 0.1f), 0.5f);
+
+        var spawnedSplitter = Instantiate(freeMirrorPrefab, emptyPosition, Quaternion.identity);
+        spawnedSplitter.name = "FreeMirror";
         spawnedSplitter.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
     }
 
