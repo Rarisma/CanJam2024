@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7249857814656768402}
   - component: {fileID: 1603213552027737780}
-  - component: {fileID: 4247980785397660289}
   - component: {fileID: -4923578074181930193}
   - component: {fileID: 1624041797516241970}
   m_Layer: 0
@@ -88,19 +87,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4247980785397660289
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1044641699200202928}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece45ad2c9ced2e4e919e0892d89d169, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rotationSpeed: 90
 --- !u!114 &-4923578074181930193
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,6 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85723912909a8d34cbfa2674c59ffbc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isMovable: 1
+  gridSize: {x: 16, y: 9}
+  rotationSpeed: 90
+  currentRotation: 0
+  lrs: []
   reflectAxis: {x: 0, y: 0}
 --- !u!61 &1624041797516241970
 BoxCollider2D:
