@@ -417,8 +417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAmountText:
   - {fileID: 328191898}
-  objectAmounts: 
-  objectNames: []
+  objectAmounts: 03000000
+  objectNames:
+  - Mirror
 --- !u!4 &2002515860
 Transform:
   m_ObjectHideFlags: 0
