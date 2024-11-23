@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Root.unity
+    guid: 528b7d4e2bce3f940b590e7438ed13e9
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 091b0e915731d554e8a9c3dbeae1cfc8
   - enabled: 1
@@ -14,4 +17,40 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Levels/Level 1.unity
     guid: 63d1a80262710fe40ab16ac38611606f
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 2.unity
+    guid: a92dbc7ffe8cb7b45985b2fcd915ca63
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 3.unity
+    guid: f765e663d359166419e4ef9605c086e1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 4.unity
+    guid: 8371a9b93160dc54ba5b63ab5cfa6e7e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 5.unity
+    guid: d0b5768f9290f304c8532b61aaacd456
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 6.unity
+    guid: 95348f1d26b70e64bb5c109553a5b074
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 7.unity
+    guid: 7787baed8251b114a842303eb08d0aad
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 8.unity
+    guid: 28726e82c5363994ca24ab836ea44a84
+  - enabled: 1
+    path: Assets/Scenes/Levels/Level 9.unity
+    guid: 630b7132160d5f143863bf79e3ca02d0
+  - enabled: 1
+    path: Assets/Scenes/Levels/Demo Levels/IntroductionToFans.unity
+    guid: 54527d88a5ee7c343a8368239bc457ea
+  - enabled: 1
+    path: Assets/Scenes/Levels/Demo Levels/IntroductionToScott.unity
+    guid: 46d97749e8572f145b3a90e1b7436c5e
+  - enabled: 1
+    path: Assets/Scenes/Levels/Demo Levels/IntroductionToSmoke.unity
+    guid: 388bf32703a4c5b4d90b9e40c15f16d1
+  - enabled: 1
+    path: Assets/Scenes/Levels/Demo Levels/IntroductionToTranslucentMirror.unity
+    guid: 298592692218e3a4f994a2f8d3a1438c
   m_configObjects: {}
