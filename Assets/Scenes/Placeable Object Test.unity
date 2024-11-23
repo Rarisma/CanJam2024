@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   width: 32
-  height: 18
+  height: 16
   tilePrefab: {fileID: 2786374356476573173, guid: 938fe0f629736c540bdd9226c4d2dc46, type: 3}
   cam: {fileID: 935807798}
 --- !u!4 &1594431754
@@ -406,10 +406,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectAmountText:
   - {fileID: 0}
-  objectAmounts: 03000000
+  - {fileID: 0}
+  objectAmounts: 0300000002000000
   objectNames:
   - LightSplitter
-  - Mirror
+  - TransparentMirror
 --- !u!4 &2002515860
 Transform:
   m_ObjectHideFlags: 0

@@ -89,7 +89,7 @@ GameObject:
   - component: {fileID: 7758055578948232460}
   - component: {fileID: 4322946613789828591}
   - component: {fileID: 3118883538681940589}
-  - component: {fileID: 4165343579533749629}
+  - component: {fileID: 4802308046130045278}
   m_Layer: 6
   m_Name: Smoke
   m_TagString: Untagged
@@ -225,7 +225,7 @@ MonoBehaviour:
   extinguishedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 0.31764707}
   ignitedColor: {r: 0.58431375, g: 0.58431375, b: 0.58431375, a: 1}
   isIgnited: 1
---- !u!95 &4165343579533749629
+--- !u!95 &4802308046130045278
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
@@ -235,7 +235,7 @@ Animator:
   m_GameObject: {fileID: 2432665544218752903}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 5783228788431897688, guid: ea88a534a0aef49469412e2bded51f82, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7f814bd8474e3d9458ee1c262e3fab1f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
