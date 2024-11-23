@@ -1,17 +1,21 @@
 using UnityEngine;
 using UnityEngine.SocialPlatforms.GameCenter;
 using DG.Tweening;
+using System.Collections;
+using Unity.VisualScripting;
 
 public class ButtonScript : MonoBehaviour {
 
     void Start() {
+
+        StartCoroutine(CenterButton());
+    }
+
+    private IEnumerator CenterButton() {
+        yield return new WaitForFixedUpdate();
         int numOfButtons = transform.parent.childCount;
         int buttonIndex = transform.GetSiblingIndex();
 
-        CenterButton(numOfButtons, buttonIndex);
-    }
-
-    private void CenterButton(int numOfButtons, int buttonIndex) {
         RectTransform rectTransform = GetComponent<RectTransform>();
         if (rectTransform != null) {
             rectTransform.anchorMin = new Vector2(0.5f, 0);
