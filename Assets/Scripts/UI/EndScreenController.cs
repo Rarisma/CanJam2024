@@ -10,6 +10,9 @@ public class EndScreenController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        RectTransform rectTransform = GetComponent<RectTransform>();
+        rectTransform.anchorMin = new Vector2(0, rectTransform.anchorMin.y);
+        rectTransform.anchorMax = new Vector2(1, rectTransform.anchorMax.y);
         reference = this;
         gameObject.SetActive(false);
     }

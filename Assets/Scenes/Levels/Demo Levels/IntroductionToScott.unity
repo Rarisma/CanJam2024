@@ -754,21 +754,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6057935209433844654, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7071068
+    - target: {fileID: 4672617866814367057, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_Size.x
+      value: 0.9
       objectReference: {fileID: 0}
-    - target: {fileID: 6057935209433844654, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
+    - target: {fileID: 4672617866814367057, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_Size.y
+      value: 0.9
       objectReference: {fileID: 0}
-    - target: {fileID: 6057935209433844654, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6057935209433844654, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.7071068
+    - target: {fileID: 4672617866814367057, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6057935209433844654, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
@@ -777,6 +773,18 @@ PrefabInstance:
     - target: {fileID: 6458094705634028368, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
       propertyPath: m_Name
       value: LightSplitter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147027919584052365, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8147027919584052365, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8878749059680281248, guid: e4dc45a3716f0fa41af7f644a781b7a6, type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -813,11 +821,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c30e93ba86b4de45a2775b9ef0f6c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAmountText:
-  - {fileID: 0}
-  objectAmounts: 05000000
-  objectNames:
-  - Mirror
+  objectAmountText: []
+  objectAmounts: 
+  objectNames: []
 --- !u!114 &2112276893
 MonoBehaviour:
   m_ObjectHideFlags: 0

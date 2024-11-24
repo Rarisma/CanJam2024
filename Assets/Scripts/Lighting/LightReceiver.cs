@@ -81,6 +81,7 @@ public class LightReceiver : LightPowered
         yield return new WaitForSeconds(1.25f);
         // TODO: Implement
         EndScreenController.Show();
+        JAM.LevelComplete();
     }
 
     void OnButtonClick()
