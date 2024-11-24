@@ -20,9 +20,11 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private AudioMixer soundMixer;
     [SerializeField] private Image logo;
+    [SerializeField] private AudioClip[] audioClips;
     private RectTransform initialMainPos;
     private RectTransform initialOptionPos;
     private RectTransform initialPlayPos;
+    private AudioSource soundSource;
     private Image blackImage;
     private int levelToLoadNextLmaoOhio;
     void Awake()
@@ -32,6 +34,7 @@ public class MainMenuController : MonoBehaviour
         initialOptionPos = optionPanel;
         initialPlayPos = playPanel;
         blackImage = blackPanel.GetComponent<Image>();
+        soundSource = GetComponent<AudioSource>();
     }
     void Start()
     {
@@ -82,6 +85,7 @@ public class MainMenuController : MonoBehaviour
         backgroundPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
+        PlaySoundEffect(audioClips[0]);
     }
 
     public void BackFromOptions()
@@ -89,6 +93,7 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
+        PlaySoundEffect(audioClips[0]);
     }
 
     public void GoToPlay()
@@ -96,6 +101,7 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
+        PlaySoundEffect(audioClips[0]);
     }
 
     public void BackFromPlay()
@@ -103,10 +109,12 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
+        PlaySoundEffect(audioClips[0]);
     }
 
     public void PlayLevel(int levelID)
     {
+        PlaySoundEffect(audioClips[0]);
         levelToLoadNextLmaoOhio = levelID;
         FadeBlackIn(1.0f);
     }
@@ -144,5 +152,10 @@ public class MainMenuController : MonoBehaviour
     {
         Debug.Log("Quitting game");
         Application.Quit();
+    }
+
+    void PlaySoundEffect(AudioClip clip)
+    {
+        soundSource.PlayOneShot(clip);
     }
 }
