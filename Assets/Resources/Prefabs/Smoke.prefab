@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 58340466215046515}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 4322946613789828591}
   - component: {fileID: 3118883538681940589}
   - component: {fileID: 4802308046130045278}
+  - component: {fileID: 6629800380870802157}
   m_Layer: 6
   m_Name: Smoke
   m_TagString: Untagged
@@ -246,3 +247,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &6629800380870802157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432665544218752903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ece45ad2c9ced2e4e919e0892d89d169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isMovable: 0
+  gridManager: {fileID: 0}
+  rotationSpeed: 0
+  currentRotation: 0
+  timesMoved: 0
