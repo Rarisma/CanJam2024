@@ -40,7 +40,9 @@ public class ObjectInventory : MonoBehaviour
     }
 
     void Update(){
-        for(int i = 0; i < objectAmountText.Length; i++){
+        print("Keys: " + string.Join(", ", objectAmount.Keys.ToArray()));
+        print("Check");
+        for (int i = 0; i < objectAmountText.Length; i++){
             objectAmountText[i].text = objectAmount[objectNames[i]].ToString();
         }
 
