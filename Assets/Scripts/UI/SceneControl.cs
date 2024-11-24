@@ -54,6 +54,7 @@ public class SceneControl : MonoBehaviour
     {
         controller.currentLevel = levelID;
         LoadScene(controller.LevelOrder[levelID]);
+        LoadJam();
     }
     public static void ReloadLevel()
     {
@@ -62,5 +63,9 @@ public class SceneControl : MonoBehaviour
     public static void MainMenu()
     {
         LoadScene("MainMenu");
+    }
+    public static void LoadJam()
+    {
+        SceneManager.LoadScene("JAM", LoadSceneMode.Additive);
     }
 }
