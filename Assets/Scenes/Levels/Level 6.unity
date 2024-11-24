@@ -736,7 +736,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1205630304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,15 +850,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c30e93ba86b4de45a2775b9ef0f6c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAmountText:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  objectAmounts: 010000000300000002000000
-  objectNames:
-  - Mirror
-  - FreeMirror
-  - LightSplitter
+  objectAmountText: []
+  objectAmounts: 
+  objectNames: []
 --- !u!114 &1246744540
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -56,7 +56,17 @@ public class PlaceableObject : MonoBehaviour
         if (!isMovable) {
             return;
         }
+        if (Input.GetMouseButton(1))
+        {
+            Debug.Log($"DELETING {gameObject.name}");
+            Destroy(gameObject);
 
+            GameObject gman = GameObject.Find("gman");
+            ObjectInventory Inventory = gman.GetComponent<ObjectInventory>();
+            Inventory.FindAndIncrement(gameObject.name);
+            Debug.Log($"Addded 1 of {gameObject.name} to player inventory");
+            return;
+        }
 
 
         Vector3 curScreenPoint = new Vector3(Input.mousePosition.x, Input.mousePosition.y, screenPoint.z);

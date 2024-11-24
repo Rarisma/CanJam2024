@@ -48,6 +48,12 @@ public class ObjectInventory : MonoBehaviour
             objectAmount[objectName]--;
         }
     }
+    public void FindAndIncrement(string objectName){
+        if (objectAmount.ContainsKey(objectName))
+        {
+            objectAmount[objectName]++;
+        }
+    }
 
     public int GetObjectAmount(string objectName){
         if (objectAmount.ContainsKey(objectName))
