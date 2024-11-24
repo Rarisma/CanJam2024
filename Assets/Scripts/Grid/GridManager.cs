@@ -9,7 +9,9 @@ public class GridManager : MonoBehaviour
 
     [SerializeField] private Transform cam;
 
-    private void Start() {
+    private void Start()
+    {
+        Instantiate(Resources.Load<GameObject>("Prefabs/Dirt BG"), new Vector3(0, 0, 5), Quaternion.identity);
         GenerateGrid();
             Camera.main.orthographicSize = height / 2 + 2f;
     }
