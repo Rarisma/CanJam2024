@@ -90,7 +90,7 @@ Material:
     - _WiggleAmount: 0.5
     - _WiggleSpeed: 5
     m_Colors:
-    - _Color: {r: 1, g: 0.9575283, b: 0.46698081, a: 0.8666667}
+    - _Color: {r: 1, g: 0.9575283, b: 0.46698081, a: 0.93333334}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _color: {r: 1, g: 0.85797274, b: 0, a: 0}

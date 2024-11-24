@@ -237,4 +237,5 @@ MonoBehaviour:
   isMovable: 1
   gridManager: {fileID: 0}
   rotationSpeed: 90
-  currentRotation: 90
+  currentRotation: 0
+  timesMoved: 0

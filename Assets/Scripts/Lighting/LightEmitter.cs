@@ -8,6 +8,7 @@ public class LightEmitter : LightObject
     {
         base.Update();
         Vector2 emitDirection = Globals.DegToVector(GetCurrentRotation());
+        transform.right = Vector2.right;
         print("emitter dir:" + emitDirection);
         Emit(transform.position, emitDirection, null);
     }

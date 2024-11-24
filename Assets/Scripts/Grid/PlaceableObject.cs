@@ -22,7 +22,12 @@ public class PlaceableObject : MonoBehaviour
 
     [SerializeField] public int timesMoved = 0;
 
+    [SerializeField] private AudioClip moveSound, rotateSound;
+
     public void Start() {
+        moveSound = Resources.Load<AudioClip>("Sounds/SoundEffects/move");
+        rotateSound = Resources.Load<AudioClip>("Sounds/SoundEffects/rotat");
+
         print("Finding GridManager");
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
 
@@ -31,6 +36,7 @@ public class PlaceableObject : MonoBehaviour
         {
             isMovable = true;
         }
+        currentRotation = transform.rotation.eulerAngles.z;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
 
     }
@@ -99,15 +105,17 @@ public class PlaceableObject : MonoBehaviour
         }
 
 
+
         if (Input.mouseScrollDelta.y != 0) {
+            FindObjectOfType<ObjectSummon>().GetComponent<AudioSource>().PlayOneShot(rotateSound);
             currentRotation = Globals.mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
             transform.DORotate(new Vector3(0, 0, currentRotation), 0.2f);
         }
     }
-    Vector3 clampPosition(Vector3 position){
+    Vector3 clampPosition(Vector3 position) {
         position.x = Mathf.Clamp(position.x, 0, gridManager.width - 1);
         position.y = Mathf.Clamp(position.y, 0, gridManager.height - 1);
-        
+
         return position;
     }
 
@@ -120,6 +128,4 @@ public class PlaceableObject : MonoBehaviour
         }
         return true;
     }
-
-
 }
