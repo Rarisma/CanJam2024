@@ -86,4 +86,16 @@ public class SceneControl : MonoBehaviour
     {
         return controller.LevelOrder[controller.currentLevel];
     }
+    public static void LevelEditor()
+    {
+        LoadScene("LevelEditor");
+    }
+    public static string GetSceneName()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
+    public static int GetLevelCount()
+    {
+        return controller.LevelOrder.Count;
+    }
 }

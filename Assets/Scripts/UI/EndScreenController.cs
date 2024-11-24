@@ -15,6 +15,11 @@ public class EndScreenController : MonoBehaviour
         rectTransform.anchorMax = new Vector2(1, rectTransform.anchorMax.y);
         reference = this;
         gameObject.SetActive(false);
+
+        if (SceneControl.GetLevelID() == SceneControl.GetLevelCount() - 1)
+        {
+            transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
+        }
     }
 
     public static void Show()
