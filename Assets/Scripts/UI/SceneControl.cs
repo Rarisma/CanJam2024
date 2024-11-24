@@ -29,10 +29,13 @@ public class SceneControl : MonoBehaviour
 
     public int currentLevel = 0;
 
+    private AudioSource musicSource;
+
     // Start is called before the first frame update
     void Start()
     {
         controller = this;
+        musicSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
         MainMenu();
     }
@@ -55,6 +58,7 @@ public class SceneControl : MonoBehaviour
         controller.currentLevel = levelID;
         LoadScene(controller.LevelOrder[levelID]);
         LoadJam();
+        if (!controller.musicSource.isPlaying) controller.musicSource.Play();
     }
     public static void ReloadLevel()
     {
