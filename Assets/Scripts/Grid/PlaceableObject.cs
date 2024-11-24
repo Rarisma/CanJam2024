@@ -19,6 +19,8 @@ public class PlaceableObject : MonoBehaviour
     public float rotationSpeed = 90f;
     public float currentRotation = 0f;
 
+    [SerializeField] private int timesMoved = 0;
+
     public void Start() {
         print("Finding GridManager");
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
@@ -35,10 +37,16 @@ public class PlaceableObject : MonoBehaviour
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
 
         transform.DOScale(1.2f, 0.2f);
+
     }
 
     void OnMouseUp() {
         transform.DOScale(1f, 0.2f);
+        timesMoved++;
+        if (timesMoved > 2) {
+            //play jam sound
+            JAM.PlayVoiceLine(JAMSounds.VoiceLineType.MovingObjects);
+        }
     }
 
 
