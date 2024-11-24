@@ -68,4 +68,12 @@ public class SceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("JAM", LoadSceneMode.Additive);
     }
+    public static int GetLevelID()
+    {
+        return controller.currentLevel;
+    }
+    public static string GetLevelName()
+    {
+        return controller.LevelOrder[controller.currentLevel];
+    }
 }

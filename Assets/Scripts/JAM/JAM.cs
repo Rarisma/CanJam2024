@@ -69,6 +69,21 @@ public class JAM : MonoBehaviour
 		}
 
         bottomHead.localPosition = initPos - new Vector3(0, clipLoudness * 100, 0);
+
+
+        Vector2 mousePosition = Input.mousePosition;
+        Vector2 canvasSize = ((RectTransform)transform.parent).sizeDelta;
+        Vector2 screenSize = new Vector2(Screen.width, Screen.height);
+        Vector2 screenCenter = new Vector2(Screen.width / 2, Screen.height / 2);
+        Vector2 ratios = new Vector2(canvasSize.x / screenSize.x, canvasSize.y / screenSize.y);
+
+        Vector2 centeredMousePos = new Vector2(mousePosition.x - screenCenter.x, mousePosition.y - screenCenter.y);
+        Vector2 corner = new Vector2(Mathf.Sign(centeredMousePos.x), Mathf.Sign(centeredMousePos.y));
+        Vector2 canvasCenter = new Vector2(canvasSize.x / 2, canvasSize.y / 2);
+        Vector2 targetPos = new Vector2(Globals.mod(corner.x * 200, (int)canvasSize.x) , Globals.mod(corner.y * 200, (int)canvasSize.y));
+
+        print(corner);
+        transform.position = Vector2.Lerp(transform.position, targetPos, 5f * Time.deltaTime);
     }
 
     public static void PlayVoiceLine(JAMSounds.VoiceLineType type)

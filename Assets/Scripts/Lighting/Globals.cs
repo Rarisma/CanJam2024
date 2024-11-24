@@ -27,4 +27,11 @@ public static class Globals
     {
         return (float)((Math.PI / 180) * angle);
     }
+
+    // Normal C# Modulo (%) doesn't wrap when going below zero, i don't want negative numbers
+    public static float mod(float value, int mod)
+    {
+        return (value % mod + mod) % mod;
+    }
+
 }

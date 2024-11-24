@@ -75,17 +75,10 @@ public class PlaceableObject : MonoBehaviour
 
 
         if (Input.mouseScrollDelta.y != 0) {
-            currentRotation = mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
+            currentRotation = Globals.mod(currentRotation + (rotationSpeed * Mathf.Sign(Input.mouseScrollDelta.y)), 360);
             transform.DORotate(new Vector3(0, 0, currentRotation), 0.2f);
         }
     }
-
-    // Normal C# Modulo (%) doesn't wrap when going below zero, i don't want negative numbers
-    float mod(float value, int mod)
-    {
-        return (value % mod + mod) % mod;
-    }
-
     Vector3 clampPosition(Vector3 position){
         position.x = Mathf.Clamp(position.x, 0, gridManager.width - 1);
         position.y = Mathf.Clamp(position.y, 0, gridManager.height - 1);
