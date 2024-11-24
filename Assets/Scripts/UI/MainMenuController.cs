@@ -17,6 +17,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private RectTransform dirtPanel;
     [SerializeField] private Image[] mainHoverImages;
     [SerializeField] private Image[] levelHoverImages;
+    [SerializeField] private Image editorImage;
     [SerializeField] private Slider soundSlider;
     [SerializeField] private Slider musicSlider;
     [SerializeField] private AudioMixer soundMixer;
@@ -150,6 +151,19 @@ public class MainMenuController : MonoBehaviour
     public void LevelHoverExit(int levelID)
     {
         levelHoverImages[levelID].DOColor(Color.white, 0.3f);
+    }
+
+    public void EditorHoverClick()
+    {
+        
+    }
+    public void EditorHoverEnter()
+    {
+        editorImage.DOColor(Color.yellow, 0.3f);
+    }
+    public void EditorHoverExit()
+    {
+        editorImage.DOColor(Color.white, 0.3f);
     }
 
     public void ChangeSoundVolume()

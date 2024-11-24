@@ -70,6 +70,7 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 1
     - _fly: 1
+    - _flyScale: -1000
     - _scale: 30.2
     - _yOffset: 0
     m_Colors:
