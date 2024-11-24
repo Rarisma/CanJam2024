@@ -56,8 +56,8 @@ MonoBehaviour:
   - Level 6
   - IntroductionToFans
   - Level 7
-  - Level 8
   - IntroductionToTranslucentMirror
+  - Level 8
   - Level 9
   - Level 10
   currentLevel: 0

@@ -853,6 +853,7 @@ MonoBehaviour:
   objectAmountText:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
   objectAmounts: 010000000300000002000000
   objectNames:
   - Mirror

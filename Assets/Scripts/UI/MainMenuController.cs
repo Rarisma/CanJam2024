@@ -139,4 +139,10 @@ public class MainMenuController : MonoBehaviour
     {
         soundMixer.SetFloat("MusicVol", musicSlider.value);
     }
+
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game");
+        Application.Quit();
+    }
 }
