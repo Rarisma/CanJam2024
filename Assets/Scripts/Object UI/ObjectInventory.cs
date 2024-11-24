@@ -10,10 +10,10 @@ using UnityEngine.UI;
 public class ObjectInventory : MonoBehaviour
 {
     public Dictionary<string, int> objectAmount = new();
-    [SerializeField] private TMP_Text[] objectAmountText;
+    public TMP_Text[] objectAmountText;
 
-    [SerializeField] private int[] objectAmounts;
-    [SerializeField] private string[] objectNames;
+    public int[] objectAmounts;
+    public string[] objectNames;
 
     bool emptyVAPlayed = false;
 
