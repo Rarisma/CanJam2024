@@ -47,14 +47,14 @@ public class JAM : MonoBehaviour
     {
 
         timeSinceLastVoiceline += Time.deltaTime;
-        if (idleVoicelineCountdown != 0.0f && timeSinceLastVoiceline > 10.0f)
+        if (idleVoicelineCountdown != 0.0f && timeSinceLastVoiceline > 8.0f)
         {
             idleVoicelineCountdown -= Time.deltaTime;
             if (idleVoicelineCountdown < 0.0f) 
             {
                 idleVoicelineCountdown = 0.0f;
                 PlayVoiceLine(JAMSounds.VoiceLineType.Idle);
-                idleVoicelineCountdown = Random.Range(2, 20);
+                idleVoicelineCountdown = Random.Range(2, 15);
             }
         }
         
