@@ -130,6 +130,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1651622876}
     m_Modifications:
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: idleSoundsNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: idleSoundsNames.Array.data[0]
+      value: beingarobotissolame
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelStartSoundsNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: smokePresentSoundsNames.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelCompleteSoundsNames.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: emptyInventorySoundsNames.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: smokePresentSoundsNames.Array.data[0]
+      value: getridofthatsmoke
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: smokePresentSoundsNames.Array.data[1]
+      value: getthatsmokeoutthere
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelCompleteSoundsNames.Array.data[0]
+      value: anotherdayanotherjam
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelCompleteSoundsNames.Array.data[1]
+      value: AWESOMESAUCE
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelCompleteSoundsNames.Array.data[2]
+      value: chatisthisjam
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: levelCompleteSoundsNames.Array.data[3]
+      value: fuckaroundandfindout
+      objectReference: {fileID: 0}
+    - target: {fileID: 587903487860748505, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: emptyInventorySoundsNames.Array.data[0]
+      value: braineatingmangos
+      objectReference: {fileID: 0}
     - target: {fileID: 3277998028540263722, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -209,6 +261,10 @@ PrefabInstance:
     - target: {fileID: 3277998028540263722, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5600531667990821638, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
+      propertyPath: Priority
+      value: 256
       objectReference: {fileID: 0}
     - target: {fileID: 7860390466510610082, guid: 64aaf8e7eb0eae34e83e4bbcd2840027, type: 3}
       propertyPath: m_Name

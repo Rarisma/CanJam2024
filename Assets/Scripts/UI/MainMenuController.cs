@@ -62,7 +62,7 @@ public class MainMenuController : MonoBehaviour
         {
             image.DOFade(1.0f, 1.0f);
         }
-        logo.DOFade(1.0f, 1.0f);
+        logo.DOFade(1.0f, 2.0f);
     }
 
     void FadeBlackIn(float durationSeconds)
@@ -73,7 +73,7 @@ public class MainMenuController : MonoBehaviour
     
     void FinishFadeIn()
     {
-        SceneManager.LoadSceneAsync(levelToLoadNextLmaoOhio);
+        SceneControl.LoadLevel(levelToLoadNextLmaoOhio);
     }
 
     public void GoToOptions()
@@ -107,7 +107,8 @@ public class MainMenuController : MonoBehaviour
 
     public void PlayLevel(int levelID)
     {
-        SceneControl.LoadLevel(levelID);
+        levelToLoadNextLmaoOhio = levelID;
+        FadeBlackIn(1.0f);
     }
 
     public void MainHoverEnter(int imageIndex)
