@@ -9,6 +9,8 @@ public class LightReceiver : LightPowered
     List<LightReceiver> lightReceivers = null;
     int lightReceiverID = 0;
 
+    public bool isActive = true;
+
     Coroutine coroutine = null;
 
     // Start is called before the first frame update

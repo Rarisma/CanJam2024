@@ -16,10 +16,11 @@ public class SceneBootstrapper : MonoBehaviour
         //Reset scene
         foreach (GameObject obj in Object.FindObjectsOfType<GameObject>())
         {
-            if (obj.tag != "MainCamera") // Exclude objects with the "MainCamera" tag
+            if (obj.tag == "MainCamera" || obj.name == "Canvas" || obj.name == "EndScreen") // Exclude objects
             {
-                Destroy(obj);
+                continue;
             }
+            Destroy(obj);
         }
 
         GameObject gman = Instantiate(Resources.Load<GameObject>("Prefabs/gman"), new Vector3(), new Quaternion());
