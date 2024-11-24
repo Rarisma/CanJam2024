@@ -16,7 +16,7 @@ public class EndScreenController : MonoBehaviour
         reference = this;
         gameObject.SetActive(false);
 
-        if (SceneControl.GetLevelID() == SceneControl.GetLevelCount() - 1)
+        if (SceneControl.GetLevelID() == SceneControl.GetLevelCount() - 1 || SceneControl.GetSceneName() == "LevelEditor")
         {
             transform.GetChild(0).GetChild(5).gameObject.SetActive(false);
         }
@@ -24,6 +24,7 @@ public class EndScreenController : MonoBehaviour
 
     public static void Show()
     {
+        print("show");
         reference.gameObject.SetActive(true);
         reference.transform.GetChild(0).GetChild(1).GetComponent<Score>().CalculateScore();
     }
