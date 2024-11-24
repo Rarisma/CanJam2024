@@ -673,11 +673,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 184.9571
+      value: 145.5865
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 104.0384
+      value: 81.8924
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -709,11 +709,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -202.08972
+      value: -160.55368
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -117.800476
+      value: -94.43646
       objectReference: {fileID: 0}
     - target: {fileID: 1615293875589323876, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -733,7 +733,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1934896028459004659, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_fontSize
-      value: 23.55
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7017792165958287116, guid: 4bbeda645f0a924478212da2b212c7a9, type: 3}
       propertyPath: m_Name
@@ -1348,7 +1348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1394,8 +1394,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 640693240}
   - {fileID: 254348727}
+  - {fileID: 640693240}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
