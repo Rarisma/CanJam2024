@@ -29,11 +29,14 @@ public class JAM : MonoBehaviour
 		clipSampleData = new float[sampleDataLength];
 
         sounds = GetComponent<JAMSounds>();
+        instance = this;
+        print("instanced");
     }
     void Start()
     {
         initPos = bottomHead.localPosition;
         idleVoicelineCountdown = Random.Range(2, 20);
+        PlayVoiceLine(JAMSounds.VoiceLineType.LevelStart);
     }
 
     // Update is called once per frame
