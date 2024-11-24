@@ -31,6 +31,7 @@ public class PlaceableObject : MonoBehaviour
         {
             isMovable = true;
         }
+        currentRotation = transform.rotation.eulerAngles.z;
         transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
 
     }
