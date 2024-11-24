@@ -61,12 +61,17 @@ public class MainMenuController : MonoBehaviour
     void FinishFadeOut()
     {
         blackPanel.SetActive(false);
+        Sequence sequence = DOTween.Sequence();
         foreach(var image in mainHoverImages)
         {
-            image.DOFade(1.0f, 1.0f);
+            Tween tween = image.DOFade(1.0f, 0.5f);
+            tween.onPlay = PlayPopSound;
+            sequence.Append(tween);
         }
+        sequence.Play();
         logo.DOFade(1.0f, 2.0f);
     }
+
 
     void FadeBlackIn(float durationSeconds)
     {
@@ -85,7 +90,7 @@ public class MainMenuController : MonoBehaviour
         backgroundPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         Debug.Log("AHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH");
-        PlaySoundEffect(audioClips[0]);
+        PlayPopSound();
     }
 
     public void BackFromOptions()
@@ -93,7 +98,7 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         optionPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
-        PlaySoundEffect(audioClips[0]);
+        PlayPopSound();
     }
 
     public void GoToPlay()
@@ -101,7 +106,7 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(-1920, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
-        PlaySoundEffect(audioClips[0]);
+        PlayPopSound();
     }
 
     public void BackFromPlay()
@@ -109,12 +114,12 @@ public class MainMenuController : MonoBehaviour
         mainPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         backgroundPanel.DOAnchorPos(new Vector2(0, 0), 0.5f);
         playPanel.DOAnchorPos(new Vector2(1920, 0), 0.5f);
-        PlaySoundEffect(audioClips[0]);
+        PlayPopSound();
     }
 
     public void PlayLevel(int levelID)
     {
-        PlaySoundEffect(audioClips[0]);
+        PlayPopSound();
         levelToLoadNextLmaoOhio = levelID;
         FadeBlackIn(1.0f);
     }
@@ -157,5 +162,10 @@ public class MainMenuController : MonoBehaviour
     void PlaySoundEffect(AudioClip clip)
     {
         soundSource.PlayOneShot(clip);
+    }
+
+    void PlayPopSound()
+    {
+        PlaySoundEffect(audioClips[0]);
     }
 }
