@@ -850,9 +850,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c30e93ba86b4de45a2775b9ef0f6c3a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectAmountText: []
-  objectAmounts: 
-  objectNames: []
+  objectAmountText:
+  - {fileID: 0}
+  - {fileID: 0}
+  objectAmounts: 010000000300000002000000
+  objectNames:
+  - Mirror
+  - FreeMirror
+  - LightSplitter
 --- !u!114 &1246744540
 MonoBehaviour:
   m_ObjectHideFlags: 0
