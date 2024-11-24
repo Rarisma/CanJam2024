@@ -31,10 +31,11 @@ public class PlaceableObject : MonoBehaviour
         {
             isMovable = true;
         }
+        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
+
     }
 
     public void Update() {
-        transform.rotation = Quaternion.Euler(new Vector3(0, 0, currentRotation));
     }
 
     void OnMouseDown() {
