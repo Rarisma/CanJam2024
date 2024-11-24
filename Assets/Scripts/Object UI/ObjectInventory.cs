@@ -33,7 +33,7 @@ public class ObjectInventory : MonoBehaviour
 
             Debug.Log(objectNames.Length + objectNames[i].ToString());
             string objectName = objectNames[i];
-            instantiatedButton.GetComponent<Button>().onClick.AddListener(() =>  summonerObject.MakeObject(objectName) );
+            instantiatedButton.GetComponent<Button>().onClick.AddListener(() =>  summonerObject.MakeObject(objectName));
 
             objectAmountText[i] = instantiatedButton.transform.GetChild(1).GetComponent<TMP_Text>();
         }
