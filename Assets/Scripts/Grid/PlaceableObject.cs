@@ -4,6 +4,7 @@ using UnityEngine.Rendering;
 using Unity.VisualScripting;
 using System;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(BoxCollider2D))]
 
@@ -24,6 +25,12 @@ public class PlaceableObject : MonoBehaviour
     public void Start() {
         print("Finding GridManager");
         gridManager = (GridManager)FindObjectOfType(typeof(GridManager));
+
+        //Make all objects moveable in level editor
+        if (SceneManager.GetActiveScene().name == "LevelEditor")
+        {
+            isMovable = true;
+        }
     }
 
     public void Update() {
@@ -41,7 +48,14 @@ public class PlaceableObject : MonoBehaviour
     }
 
     void OnMouseUp() {
-        transform.DOScale(1f, 0.2f);
+        if (TryGetComponent<FanScript>(out FanScript FA))
+        {
+            transform.DOScale(0.75f, 0.2f);
+        }
+        else
+        {
+            transform.DOScale(1f, 0.2f);
+        }
         timesMoved++;
         if (timesMoved > 2) {
             //play jam sound

@@ -158,13 +158,21 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  objectAmounts: 0900000009000000090000000900000009000000
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  objectAmounts: 090000000900000009000000090000000900000009000000090000000900000009000000
   objectNames:
   - Mirror
   - FreeMirror
   - TransparentMirror
   - LightSplitter
   - LightEnd
+  - Fan
+  - LightStart
+  - Smoke
+  - Wall
 --- !u!114 &508354883
 MonoBehaviour:
   m_ObjectHideFlags: 0
