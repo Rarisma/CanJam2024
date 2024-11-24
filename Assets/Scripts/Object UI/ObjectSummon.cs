@@ -5,7 +5,7 @@ using DG.Tweening;
 
 public class ObjectSummon : MonoBehaviour
 {
-    [SerializeField] private ObjectInventory objectInventory;
+    public ObjectInventory objectInventory;
 
 
     public void MakeObject(string objectName)
