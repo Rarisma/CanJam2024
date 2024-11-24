@@ -34,6 +34,10 @@ public class ObjectSummon : MonoBehaviour
         spawnedMirror.name = objectName;
         spawnedMirror.transform.DOPunchScale(new Vector3(0.2f, 0.2f, 0.2f), 0.5f);
 
+        if (spawnedMirror.transform.GetChild(0).TryGetComponent<LightReceiver>(out LightReceiver lightReceiver))
+        {
+            lightReceiver.isActive = false;
+        }
         
 
 
