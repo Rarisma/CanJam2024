@@ -130,13 +130,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 268924796}
     m_Modifications:
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.683434
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.573073
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3.683434
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.573073
+      objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.683434
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.573073
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -182,6 +198,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Wall (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 3.683434
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.573073
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -200,13 +224,29 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 268924796}
     m_Modifications:
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 3.5
+      objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.9715447
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3.5866013
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -251,6 +291,14 @@ PrefabInstance:
     - target: {fileID: 7809220406153715130, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_Name
       value: Wall (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.y
+      value: 3.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -571,9 +619,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 268924796}
     m_Modifications:
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 614580870170192087, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.x
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3.1613793
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1362176821075050474, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -618,6 +674,10 @@ PrefabInstance:
     - target: {fileID: 7809220406153715130, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
       propertyPath: m_Name
       value: Wall (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7932557156138497446, guid: fe6a6f085ca2982428061bdd2add985c, type: 3}
+      propertyPath: m_Size.x
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
