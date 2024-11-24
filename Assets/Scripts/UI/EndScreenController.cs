@@ -26,7 +26,7 @@ public class EndScreenController : MonoBehaviour
     {
         print("show");
         reference.gameObject.SetActive(true);
-        reference.transform.GetChild(0).GetChild(1).GetComponent<Score>().CalculateScore();
+        reference.transform.GetChild(0).GetChild(2).GetComponent<Score>().CalculateScore();
     }
 
     public void MainMenuPressed()
