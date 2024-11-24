@@ -45,14 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LevelOrder:
-  - IntroductionToLightingMechanic
   - Level 1
   - IntroductionToSmoke
   - Level 2
   - Level 3
   - IntroductionToScott
   - Level 4
-  - IntroductionToFreeMirrors
+  - IntroductionToFreeMirror
   - Level 5
   - Level 6
   - IntroductionToFans
@@ -60,4 +59,5 @@ MonoBehaviour:
   - Level 8
   - IntroductionToTranslucentMirror
   - Level 9
+  - Level 10
   currentLevel: 0

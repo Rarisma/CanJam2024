@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
@@ -13,6 +14,8 @@ public class ObjectInventory : MonoBehaviour
 
     [SerializeField] private int[] objectAmounts;
     [SerializeField] private string[] objectNames;
+
+    bool emptyVAPlayed = false;
 
     private void Start(){
         for (int i = 0; i < objectNames.Length; i++)
@@ -39,6 +42,13 @@ public class ObjectInventory : MonoBehaviour
     void Update(){
         for(int i = 0; i < objectAmountText.Length; i++){
             objectAmountText[i].text = objectAmount[objectNames[i]].ToString();
+        }
+
+
+        if (objectAmount.Values.ToList().Sum() == 0 && !emptyVAPlayed)
+        {
+         //   JAM.PlayVoiceLine(JAMSounds.VoiceLineType.EmptyInventory);
+            emptyVAPlayed = true;
         }
     }
 
