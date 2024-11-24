@@ -70,7 +70,7 @@ public class Score : MonoBehaviour
         float finalScore = (maxScore - SubtractedScore) / (plantCount * 2);
         if (finalScore < 0) finalScore = 0;
 
-        AnimateScore(maxScore / (plantCount * 2), finalScore, 2f);
+        scoreText.text = finalScore.ToString();
         //scoreText.text = ("Score: " + (maxScore / (plantCount * 2)).ToString() + " " + finalScore.ToString() + " " + timeTaken * 10 + " " + 
                 //(FindObjectsOfType<PlaceableObject>().Sum((o) => Mathf.Max(o.timesMoved - 2, 0)) * 75));
 
