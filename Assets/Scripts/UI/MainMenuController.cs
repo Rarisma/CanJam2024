@@ -4,6 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class MainMenuController : MonoBehaviour
 {
@@ -15,6 +16,10 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private RectTransform skyPanel;
     [SerializeField] private Image[] mainHoverImages;
     [SerializeField] private Image[] levelHoverImages;
+    [SerializeField] private Slider soundSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private AudioMixer soundMixer;
+    [SerializeField] private Image logo;
     private RectTransform initialMainPos;
     private RectTransform initialOptionPos;
     private RectTransform initialPlayPos;
@@ -57,6 +62,7 @@ public class MainMenuController : MonoBehaviour
         {
             image.DOFade(1.0f, 1.0f);
         }
+        logo.DOFade(1.0f, 1.0f);
     }
 
     void FadeBlackIn(float durationSeconds)
@@ -121,5 +127,15 @@ public class MainMenuController : MonoBehaviour
     public void LevelHoverExit(int levelID)
     {
         levelHoverImages[levelID].DOColor(Color.white, 0.3f);
+    }
+
+    public void ChangeSoundVolume()
+    {
+        soundMixer.SetFloat("SoundVol", soundSlider.value);
+    }
+
+    public void ChangeMusicVolume()
+    {
+        soundMixer.SetFloat("MusicVol", musicSlider.value);
     }
 }
