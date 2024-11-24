@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -37,7 +38,12 @@ public class SceneControl : MonoBehaviour
         controller = this;
         musicSource = GetComponent<AudioSource>();
         DontDestroyOnLoad(gameObject);
-        MainMenu();
+        Cutscene();
+    }
+
+    public static void Cutscene()
+    {
+        LoadScene("Opening");
     }
 
     public static void NextLevel()
