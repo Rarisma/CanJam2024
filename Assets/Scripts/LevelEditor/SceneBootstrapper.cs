@@ -16,6 +16,7 @@ public class SceneBootstrapper : MonoBehaviour
         //Reset scene
         foreach (GameObject obj in Object.FindObjectsOfType<GameObject>())
         {
+            print(obj.name + obj.tag);
             if (obj.tag == "MainCamera" || obj.name == "Canvas" || obj.name == "EndScreen") // Exclude objects
             {
                 continue;
