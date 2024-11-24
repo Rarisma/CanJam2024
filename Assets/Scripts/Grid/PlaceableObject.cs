@@ -46,6 +46,7 @@ public class PlaceableObject : MonoBehaviour
         if (timesMoved > 2) {
             //play jam sound
             JAM.PlayVoiceLine(JAMSounds.VoiceLineType.MovingObjects);
+            timesMoved = 0;
         }
     }
 

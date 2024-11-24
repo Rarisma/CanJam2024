@@ -53,7 +53,7 @@ public class JAMSounds : MonoBehaviour
         smokePresentSounds = LoadSounds("smokepresent");
         levelCompleteSounds = LoadSounds("levelcomplete");
         idleSounds = LoadSounds("idle");
-        movingObjectSounds = LoadSounds("movingobjects");
+        movingObjectSounds = LoadSounds("movingobjects").Concat(LoadSounds("emptyinventory")).ToArray();
         emptyInventorySounds = LoadSounds("emptyinventory");
     }
 
