@@ -14,6 +14,7 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private RectTransform playPanel;
     [SerializeField] private RectTransform backgroundPanel;
     [SerializeField] private RectTransform skyPanel;
+    [SerializeField] private RectTransform dirtPanel;
     [SerializeField] private Image[] mainHoverImages;
     [SerializeField] private Image[] levelHoverImages;
     [SerializeField] private Slider soundSlider;
@@ -73,10 +74,10 @@ public class MainMenuController : MonoBehaviour
     }
 
 
-    void FadeBlackIn(float durationSeconds)
+    void FadeBlackIn()
     {
         blackPanel.SetActive(true);
-        blackImage.DOFade(1.0f, durationSeconds).onComplete = FinishFadeIn;
+        blackImage.DOFade(1.0f, 2.5f).onComplete = FinishFadeIn;
     }
     
     void FinishFadeIn()
@@ -121,7 +122,15 @@ public class MainMenuController : MonoBehaviour
     {
         PlayPopSound();
         levelToLoadNextLmaoOhio = levelID;
-        FadeBlackIn(1.0f);
+        PlayLevelTransition();
+    }
+
+    void PlayLevelTransition()
+    {
+        backgroundPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
+        dirtPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
+        playPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
+        FadeBlackIn();
     }
 
     public void MainHoverEnter(int imageIndex)
