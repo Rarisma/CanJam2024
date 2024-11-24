@@ -80,6 +80,7 @@ public class SceneControl : MonoBehaviour
     }
     public static int GetLevelID()
     {
+        if (controller == null) return 0;
         return controller.currentLevel;
     }
     public static string GetLevelName()
@@ -96,6 +97,7 @@ public class SceneControl : MonoBehaviour
     }
     public static int GetLevelCount()
     {
+        if (controller == null) return -1;
         return controller.LevelOrder.Count;
     }
 }
