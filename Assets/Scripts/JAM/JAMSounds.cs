@@ -6,21 +6,22 @@ using UnityEngine;
 public class JAMSounds : MonoBehaviour
 {
     // TODO: dont repeat voice lines until all have been played
-    [SerializeField] private AudioClip[] levelStartSounds;
+     private AudioClip[] levelStartSounds;
     private static List<int> levelStartUsed;
-    [SerializeField] private AudioClip[] smokePresentSounds;
+     private AudioClip[] smokePresentSounds;
     private static List<int> smokePresentUsed;
-    [SerializeField] private AudioClip[] levelCompleteSounds;
+     private AudioClip[] levelCompleteSounds;
     private static List<int> levelCompleteUsed;
-    [SerializeField] private AudioClip[] idleSounds;
+     private AudioClip[] idleSounds;
     private static List<int> idleUsed;
-    [SerializeField] private AudioClip[] movingObjectSounds;
+    private AudioClip[] movingObjectSounds;
     private static List<int> movingObjectUsed;
-    [SerializeField] private AudioClip[] emptyInventorySounds;
+    private AudioClip[] emptyInventorySounds;
     private static List<int> emptyInventoryUsed;
 
     void Start()
     {
+        LoadSounds();
         if (levelStartUsed != null) return;
         levelStartUsed = Enumerable.Range(0, levelStartSounds.Length).ToList();
         smokePresentUsed = Enumerable.Range(0, smokePresentSounds.Length).ToList();
@@ -44,6 +45,22 @@ public class JAMSounds : MonoBehaviour
         Idle,
         MovingObjects,
         EmptyInventory
+    }
+
+    public void LoadSounds()
+    {
+        levelStartSounds = LoadSounds("levelstart");
+        smokePresentSounds = LoadSounds("smokepresent");
+        levelCompleteSounds = LoadSounds("levelcomplete");
+        idleSounds = LoadSounds("idle");
+        movingObjectSounds = LoadSounds("movingobjects");
+        emptyInventorySounds = LoadSounds("emptyinventory");
+    }
+
+    public AudioClip[] LoadSounds(string folderName)
+    {
+        var sound = Resources.LoadAll<AudioClip>("Sounds/VoiceLines/" + folderName);
+        return sound.ToArray();
     }
 
     public AudioClip GetVoiceLine(VoiceLineType type)
