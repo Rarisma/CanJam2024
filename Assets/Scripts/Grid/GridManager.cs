@@ -12,6 +12,9 @@ public class GridManager : MonoBehaviour
     private void Start()
     {
         Instantiate(Resources.Load<GameObject>("Prefabs/Dirt BG"), new Vector3(0, 0, 5), Quaternion.identity);
+        Transform blocker = Instantiate(Resources.Load<GameObject>("Prefabs/LightBorder"), new Vector3(-0.5f, -0.5f, 5), Quaternion.identity).transform;
+        blocker.localScale = new Vector3(width, height, 1);
+
         GenerateGrid();
             Camera.main.orthographicSize = height / 2 + 2f;
     }
