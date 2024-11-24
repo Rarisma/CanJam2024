@@ -22,6 +22,8 @@ public class LightObject : MonoBehaviour
                 GetComponent<SpriteRenderer>().color = Color.gray;
             }
         }
+
+        lineMaterial = new Material(Resources.Load<Material>("Materials/Light"));
     }
 
     // Update is called once per frame
@@ -34,7 +36,7 @@ public class LightObject : MonoBehaviour
         ResetLightRays();
     }
 
-    public void DrawLine(Vector2 start, Vector2 end)
+    public void DrawLine(Vector2 start, Vector2 end, int recursions)
     {
         Vector3 startPoint = new Vector3(start.x, start.y, -0.1f);
         Vector3 endPoint = new Vector3(end.x, end.y, -0.1f);
@@ -85,6 +87,13 @@ public class LightObject : MonoBehaviour
         lineMesh.vertices = vertices.ToArray();
         lineMesh.triangles = triangles.ToArray();
 
+        // Set Colour
+        float dec = 1f / 15f;
+        print("recursions: " + recursions);
+        print(1 - (dec * recursions));
+        lineMaterial.color = new Color(lineMaterial.color.r, lineMaterial.color.g, lineMaterial.color.b, 1 - (dec * recursions));
+
+
         // Draw the mesh
         Graphics.DrawMesh(lineMesh, Matrix4x4.identity, lineMaterial, 0);
 
@@ -100,9 +109,10 @@ public class LightObject : MonoBehaviour
     }
 
     public void Emit(Vector2 startPos, Vector2 direction, LightObject last_hit, int recursions = 0){
-        if (recursions > 25) return;
+        if (recursions > 15) return;
         direction.x = (float)Math.Round(direction.x, 2);
         direction.y = (float)Math.Round(direction.y, 2);
+
 
         print("an object is emitting: " + gameObject.name + "at direction " + direction);
 
@@ -116,7 +126,7 @@ public class LightObject : MonoBehaviour
             }
 
             print("an object is hitting: " + gameObject.name + " " + ray.transform.gameObject.name);
-            DrawLine(startPos, ray.point);
+            DrawLine(startPos, ray.point, recursions);
             if (ray.distance < 0.5f) return;
             if (ray.transform.TryGetComponent<LightObject>(out LightObject reflector))
             {
@@ -130,7 +140,7 @@ public class LightObject : MonoBehaviour
         }
 
        
-       DrawLine(startPos, startPos + (direction * 100f));
+       DrawLine(startPos, startPos + (direction * 100f), recursions);
         
     }
 
