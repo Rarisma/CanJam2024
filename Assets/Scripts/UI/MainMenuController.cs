@@ -75,10 +75,12 @@ public class MainMenuController : MonoBehaviour
     }
 
 
-    void FadeBlackIn()
+    void FadeBlackIn(bool loadLevel)
     {
         blackPanel.SetActive(true);
-        blackImage.DOFade(1.0f, 2.5f).onComplete = FinishFadeIn;
+        if (loadLevel) blackImage.DOFade(1.0f, 2.5f).onComplete = FinishFadeIn;
+        else blackImage.DOFade(1.0f, 2.5f);
+        
     }
     
     void FinishFadeIn()
@@ -131,7 +133,7 @@ public class MainMenuController : MonoBehaviour
         backgroundPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
         dirtPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
         playPanel.DOAnchorPosY(2000.0f, 3.0f).SetEase(Ease.InOutSine);
-        FadeBlackIn();
+        FadeBlackIn(true);
     }
 
     public void MainHoverEnter(int imageIndex)
@@ -155,7 +157,8 @@ public class MainMenuController : MonoBehaviour
 
     public void EditorHoverClick()
     {
-        
+        FadeBlackIn(false);
+        SceneControl.LevelEditor();
     }
     public void EditorHoverEnter()
     {
