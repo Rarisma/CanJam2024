@@ -30,6 +30,12 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+    }
+
+
+    public void CalculateMaxScore()
+    {
+
         plantCount = (FindObjectsOfType<LightReceiver>().Length);
         if (FindObjectOfType<ObjectInventory>() != null)
         {
@@ -37,7 +43,7 @@ public class Score : MonoBehaviour
                 (plantCount * 2000)
                 +
                 (FindObjectOfType<ObjectInventory>().objectAmount.Values.Sum() * 250);
-            
+
         }
         else
         {
@@ -71,17 +77,19 @@ public class Score : MonoBehaviour
         if (finalScore < 0) finalScore = 0;
 
         scoreText.text = finalScore.ToString();
-        //scoreText.text = ("Score: " + (maxScore / (plantCount * 2)).ToString() + " " + finalScore.ToString() + " " + timeTaken * 10 + " " + 
-                //(FindObjectsOfType<PlaceableObject>().Sum((o) => Mathf.Max(o.timesMoved - 2, 0)) * 75));
+        AnimateScore(maxScore / (plantCount * 2), finalScore, 1f);
+        //=scoreText.text = ("Score: " + (maxScore / (plantCount * 2)).ToString() + " " + finalScore.ToString() + " " + timeTaken * 10 + " " + 
+        //(FindObjectsOfType<PlaceableObject>().Sum((o) => Mathf.Max(o.timesMoved - 2, 0)) * 75));
 
     }
 
     void AnimateScore(float fromScore, float toScore, float duration)
     {
         // Tween the score value over time and update the text
-        DOTween.To(() => fromScore, x => {
+        DOTween.To(() => fromScore, x =>
+        {
             fromScore = x; // Update the value
-            scoreText.text = "Score: " +  Mathf.FloorToInt(fromScore).ToString(); // Update the text
+            scoreText.text = "Score: " + Mathf.FloorToInt(fromScore).ToString(); // Update the text
         }, toScore, duration);
     }
 }

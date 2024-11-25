@@ -14,6 +14,7 @@ public class EndScreenController : MonoBehaviour
         rectTransform.anchorMin = new Vector2(0, rectTransform.anchorMin.y);
         rectTransform.anchorMax = new Vector2(1, rectTransform.anchorMax.y);
         reference = this;
+        transform.GetChild(0).GetChild(2).GetComponent<Score>().CalculateMaxScore();
         gameObject.SetActive(false);
 
         if (SceneControl.GetLevelID() == SceneControl.GetLevelCount() - 1 || SceneControl.GetSceneName() == "LevelEditor")
@@ -38,7 +39,8 @@ public class EndScreenController : MonoBehaviour
         SceneControl.ReloadLevel();
     }
 
-    public void NextLevelPressed() { 
-        SceneControl.NextLevel(); 
+    public void NextLevelPressed()
+    {
+        SceneControl.NextLevel();
     }
 }
